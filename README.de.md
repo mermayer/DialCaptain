@@ -8,7 +8,7 @@
 
 **Deutsch** · [English](README.md)
 
-**[Projektseite](docs/de/index.html)** · **[Vollständige Anleitung](docs/de/guide/index.html)** · **[Gehäuse-STL](docs/downloads/enclosure/)**
+**[Projektseite](https://dialcaptain.mermayer.workers.dev/de/)** · **[Vollständige Anleitung](https://dialcaptain.mermayer.workers.dev/de/guide/)** · **[Gehäuse & STL-Dateien](https://dialcaptain.mermayer.workers.dev/de/#enclosure)**
 
 </div>
 
@@ -41,8 +41,10 @@ schließt er. Die Audiosteuerung läuft weiter.
 
 ## Stand der Projektseiten
 
-Die deutsch-/englischen Projektseiten befinden sich im Aufbau. Es gibt noch
-keinen öffentlichen DialCaptain-Release oder freigegebenen Online-Installer.
+Die [deutschen](https://dialcaptain.mermayer.workers.dev/de/) und
+[englischen](https://dialcaptain.mermayer.workers.dev/) Projektseiten sind öffentlich
+erreichbar. Dieses Dokumentationsrepository bleibt privat. Es gibt noch keinen
+öffentlichen DialCaptain-Firmware-Release oder freigegebenen Online-Installer.
 Dieses Repository enthält ausschließlich Projektseiten, Benutzeranleitungen,
 Bilder und Gehäuse-STL-Dateien. Keine Firmwarequellen, Firmwaredownloads,
 Tests, Entwicklungswerkzeuge oder Programminterna.

@@ -36,6 +36,8 @@ h1,h2,h3,p { margin-top:0; }
 .hero-image figcaption { color:var(--muted); font-size:13px; margin-top:8px; text-align:center; }
 .release-note { border-left:2px solid var(--accent); padding:8px 0 8px 16px; color:var(--muted); font-size:13px; line-height:1.55; margin-top:24px; max-width:580px; }
 .release-note strong { color:var(--accent); }
+.license-summary { max-width:580px; margin-top:14px; color:var(--muted); font-size:13px; line-height:1.6; }
+.license-summary a { color:var(--accent); white-space:nowrap; }
 .signal-path { display:flex; align-items:center; flex-wrap:wrap; gap:16px; border-block:1px solid var(--line); padding:24px 0; color:var(--muted-strong); font-size:15px; }
 .signal-path span { color:var(--accent); font:12px/1.3 Consolas,monospace; }
 .content-section { padding-block:88px; border-bottom:1px solid var(--line-soft); }

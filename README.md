@@ -52,6 +52,19 @@ The STL drafts contain a case, lid and two foot variants. Print one case,
 one lid and four feet of your chosen type, check fit and prepare the files
 in your own slicer. Printer-specific G-code is not distributed.
 
+## License
+
+Copyright © 2026 Senior Coder. Senior Coder-authored material uses the
+**DialCaptain Personal-Use Binary License 1.0**, following the same licensing
+model as RoonPilot. It permits free private, noncommercial use of the official,
+unmodified firmware on supported hardware. Settings backups and private
+enclosure printing are expressly permitted. Redistribution, modifications and
+commercial use need separate written permission, subject to independent
+third-party rights and mandatory statutory rights.
+
+The [license page and complete terms](https://mermayer.github.io/DialCaptain/license/)
+explain permitted use, enclosure printing and third-party rights.
+
 ## Questions and support
 
 Please report questions and problems in [GitHub Issues](https://github.com/mermayer/DialCaptain/issues)

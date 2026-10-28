@@ -55,6 +55,20 @@ Die STL-Entwürfe enthalten Gehäuse, Deckel und zwei Fußvarianten. Ein Gehäus
 einen Deckel und vier Füße der gewählten Variante drucken; Passform prüfen und
 im eigenen Slicer vorbereiten. Es wird kein druckerspezifischer G-Code verteilt.
 
+## Lizenz
+
+Copyright © 2026 Senior Coder. Für die eigenen Bestandteile gilt die
+**DialCaptain-Lizenz für private Binärnutzung 1.0**, nach derselben Grundlage wie
+bei RoonPilot. Sie erlaubt die kostenlose private, nicht kommerzielle Nutzung
+der offiziellen unveränderten Firmware auf unterstützter Hardware.
+Konfigurationssicherungen und der private Gehäusedruck sind ausdrücklich erlaubt.
+Weitergabe, Änderungen und kommerzielle Nutzung benötigen eine gesonderte
+schriftliche Erlaubnis, soweit keine eigenständigen Drittanbieterrechte oder
+zwingenden gesetzlichen Rechte gelten.
+
+Die [Lizenzseite mit vollständigen Bedingungen](https://mermayer.github.io/DialCaptain/de/license/)
+erklärt Nutzung, Gehäusedruck und Rechte Dritter.
+
 ## Fragen und Unterstützung
 
 Fragen und Fehler bitte unter [GitHub Issues](https://github.com/mermayer/DialCaptain/issues)

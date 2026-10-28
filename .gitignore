@@ -4,6 +4,8 @@
 !/docs/assets/
 !/docs/de/
 !/docs/de/guide/
+!/docs/license/
+!/docs/de/license/
 !/docs/guide/
 !/docs/downloads/
 !/docs/downloads/enclosure/
@@ -13,6 +15,9 @@
 !/.gitignore
 !/README.de.md
 !/README.md
+!/LICENSE.md
+!/LICENSE.de.md
+!/NOTICE
 !/THIRD_PARTY_NOTICES.md
 !/docs/.nojekyll
 !/docs/404.html
@@ -49,3 +54,5 @@
 !/docs/firmware/index.html
 !/docs/guide/index.html
 !/docs/index.html
+!/docs/license/index.html
+!/docs/de/license/index.html

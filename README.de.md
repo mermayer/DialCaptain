@@ -8,7 +8,7 @@
 
 **Deutsch** · [English](README.md)
 
-**[Projektseite](https://dialcaptain.mermayer.workers.dev/de/)** · **[Vollständige Anleitung](https://dialcaptain.mermayer.workers.dev/de/guide/)** · **[Gehäuse & STL-Dateien](https://dialcaptain.mermayer.workers.dev/de/#enclosure)**
+**[Projektseite](https://mermayer.github.io/DialCaptain/de/)** · **[Vollständige Anleitung](https://mermayer.github.io/DialCaptain/de/guide/)** · **[Gehäuse & STL-Dateien](https://mermayer.github.io/DialCaptain/de/#enclosure)**
 
 </div>
 
@@ -41,9 +41,9 @@ schließt er. Die Audiosteuerung läuft weiter.
 
 ## Stand der Projektseiten
 
-Die [deutschen](https://dialcaptain.mermayer.workers.dev/de/) und
-[englischen](https://dialcaptain.mermayer.workers.dev/) Projektseiten sind öffentlich
-erreichbar. Dieses Dokumentationsrepository bleibt privat. Es gibt noch keinen
+Die [deutschen](https://mermayer.github.io/DialCaptain/de/) und
+[englischen](https://mermayer.github.io/DialCaptain/) Projektseiten sind öffentlich
+erreichbar. Dieses Repository ist öffentlich und enthält nur Benutzeranleitungen und Medien. Es gibt noch keinen
 öffentlichen DialCaptain-Firmware-Release oder freigegebenen Online-Installer.
 Dieses Repository enthält ausschließlich Projektseiten, Benutzeranleitungen,
 Bilder und Gehäuse-STL-Dateien. Keine Firmwarequellen, Firmwaredownloads,

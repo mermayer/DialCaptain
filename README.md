@@ -8,7 +8,7 @@
 
 **English** · [Deutsch](README.de.md)
 
-**[Project page](https://dialcaptain.mermayer.workers.dev/)** · **[Complete guide](https://dialcaptain.mermayer.workers.dev/guide/)** · **[Enclosure & STL files](https://dialcaptain.mermayer.workers.dev/#enclosure)**
+**[Project page](https://mermayer.github.io/DialCaptain/)** · **[Complete guide](https://mermayer.github.io/DialCaptain/guide/)** · **[Enclosure & STL files](https://mermayer.github.io/DialCaptain/#enclosure)**
 
 </div>
 
@@ -39,9 +39,9 @@ without interaction; audio control continues.
 
 ## Project-page status
 
-The [English](https://dialcaptain.mermayer.workers.dev/) and
-[German](https://dialcaptain.mermayer.workers.dev/de/) project pages are publicly
-available. This documentation repository remains private. There is no public
+The [English](https://mermayer.github.io/DialCaptain/) and
+[German](https://mermayer.github.io/DialCaptain/de/) project pages are publicly
+available. This repository is public and contains only user documentation and media. There is no public
 DialCaptain firmware release or approved online installer yet. This repository contains
 only project pages, user guides, images and enclosure STL files. It contains
 no firmware sources/downloads, tests, development tools or program internals.

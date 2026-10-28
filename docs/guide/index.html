@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#07090a"><meta name="robots" content="noindex,nofollow"><meta name="description" content="USB installation, Wi-Fi, first pairing, Roon, BluOS, WiiM and backup restoration."><title>DialCaptain — Complete setup guide</title><link rel="icon" href="../assets/favicon.svg"><link rel="stylesheet" href="../assets/foundation.css"><link rel="stylesheet" href="../assets/project.css"><script src="../assets/navigation.js" defer></script><script src="../assets/project.js" defer></script></head>
+<body class="project-page guide-page"><a class="skip-link" href="#main">Skip to content</a><svg class="icon-sprite" aria-hidden="true"><symbol id="i-usb" viewBox="0 0 24 24"><path d="M12 3v15M9 6l3-3 3 3M12 11l-5 4H4M12 14l5 4h3"/><circle cx="4" cy="15" r="1"/><rect x="19" y="17" width="2" height="2"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5v16M12 5C8 2 4 3 3 4v15c3-1 6-1 9 2 3-3 6-3 9-2V4c-1-1-5-2-9 1Z"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 19v2h16v-2"/></symbol><symbol id="i-github" viewBox="0 0 24 24"><path d="M9 21v-4c-4 1-4-2-6-2M15 21v-4c0-1-.5-2-1-2 4-.5 6-2 6-6 0-1-.5-3-1-3 .5-1 .5-3 0-3-2 0-3 1-4 1-2-.5-4-.5-6 0-1 0-2-1-4-1-.5 0-.5 2 0 3-.5 0-1 2-1 3 0 4 2 5.5 6 6-.5 0-1 1-1 2"/></symbol></svg>
+<header class="site-header">
+<div class="header-inner"><a class="brand" href="../" aria-label="DialCaptain"><img src="../assets/favicon.svg" alt="" width="30" height="30"><span>Dial<em>Captain</em></span></a>
+<nav aria-label="Main navigation"><a href="../">Project overview</a>
+<details class="guide-chapters-menu">
+<summary>All chapters</summary>
+<div class="guide-chapters-list">
+</div>
+</details>
+</nav>
+<div class="header-actions"><a class="language-link" href="../de/guide/" lang="de">Deutsch</a><a class="header-link" href="https://github.com/mermayer/DialCaptain" aria-label="GitHub home"><svg aria-hidden="true"><use href="#i-github"></use></svg><span>GitHub home</span></a>
+<details class="mobile-menu">
+<summary>Menu</summary>
+<div class="mobile-links"><a href="#ready">Before you start</a><a href="#usb">Install over USB</a><a href="#wifi">Wi-Fi & server</a><a href="#pair">Pair the Tap Dial</a><a href="#roon">Roon control</a><a href="#bluos">BluOS control</a><a href="#wiim">WiiM control</a><a href="#web">Web configuration</a><a href="#backup">Backup & updates</a><a href="#support">Troubleshooting</a>
+</div>
+</details>
+</div>
+</div>
+</header>
+<main id="main">
+<div class="page-width">
+<div class="guide-intro">
+<div class="breadcrumbs"><a class="button secondary" href="../" ><svg aria-hidden="true"><use href="#i-arrow"></use></svg>Project overview</a><a class="button secondary" href="https://github.com/mermayer/DialCaptain" ><svg aria-hidden="true"><use href="#i-github"></use></svg>GitHub home</a>
+</div>
+<h1>Your start with DialCaptain.</h1>
+<p>From your first USB connection to your own button mappings. Step by step for Roon, BluOS and WiiM.</p>
+</div>
+<div class="guide-layout">
+<aside class="guide-nav" aria-label="Table of contents">
+<h2>On this page</h2><a href="#ready">Before you start</a><a href="#usb">Install over USB</a><a href="#wifi">Wi-Fi & server</a><a href="#pair">Pair the Tap Dial</a><a href="#roon">Roon control</a><a href="#bluos">BluOS control</a><a href="#wiim">WiiM control</a><a href="#web">Web configuration</a><a href="#backup">Backup & updates</a><a href="#support">Troubleshooting</a>
+</aside>
+<article class="guide-article">
+<section id="ready">
+<h2>01 · Before you start</h2>
+<p>DialCaptain connects a <strong>Philips Hue Tap Dial RDM002</strong> over Zigbee to an <strong>ESP32-C6 Zero with 8 MB flash</strong>. The ESP then sends commands over your Wi-Fi to Roon, a BluOS player or a WiiM. Your existing audio system continues to play the music.</p>
+<ul>
+<li>A computer with <strong>Chrome or Edge</strong>, a USB data cable and the ESP. A charge-only cable is not enough. If you have trouble with a USB hub, use a direct computer port.</li>
+<li>Your <strong>2.4 GHz Wi-Fi</strong> name and password. The computer, ESP and player or Roon Server must be able to communicate on your home network. An isolated guest network is unsuitable.</li>
+<li>For Roon: a running Roon Server and an existing playback zone. For BluOS or WiiM: a configured player; ideally create your desired presets in its app beforehand.</li>
+<li>The Tap Dial remains battery powered. The <strong>ESP needs continuous USB power</strong>. The computer is only needed for USB setup; afterwards a suitable USB power supply is enough.</li>
+</ul>
+<p>No Hue Bridge, RoonPilot, Home Assistant or extra computer service is required. A Tap Dial belongs to one Zigbee network; it cannot be paired with a Hue Bridge and DialCaptain simultaneously.</p>
+<div class="notice"><strong>Development preview 0.2.0-dev.8.</strong> Existing control has been tested. Complete first pairing of a new remote and restoring after a real factory flash still need separate hardware acceptance. This preview is not a stable release.</div>
+</section>
+<section id="usb">
+<h2>02 · Install over USB</h2>
+<p>The Web Installer writes firmware over USB. The same assistant then guides you through Wi-Fi, server selection or restoration. You do not need a development environment or speculative driver downloads.</p>
+<ol>
+<li><strong>Back up an existing device:</strong> If the ESP already runs DialCaptain with your settings, export a backup file first. A complete erase removes Wi-Fi, profiles and Tap Dial pairing. A factory-new ESP has nothing to back up yet.</li>
+<li><strong>Connect the ESP directly:</strong> Plug a USB data cable into the computer and ESP32-C6. Close serial monitors and other browser tabs that have opened this device.</li>
+<li><strong>Open the installer:</strong> Use the button below in Chrome or Edge on your computer. A hosted page needs HTTPS; the local preview on <code>localhost</code> also works. Do not open the HTML file by double-clicking it.</li>
+</ol>
+<div class="actions"><a class="button primary" href="../firmware/?lang=en" ><svg aria-hidden="true"><use href="#i-usb"></use></svg>Open USB Web Installer</a>
+</div>
+<ol start="4">
+<li>Choose <strong>“Install / update firmware”</strong>. The browser opens its USB device chooser. Select your connected ESP and click <strong>Connect</strong>. Its name is often <strong>USB JTAG/serial debug unit</strong> or similar. <code>COM…</code> on Windows and <code>cu.usbmodem…</code> on macOS are port names and may differ.</li>
+<li>Select <strong>“Install DialCaptain”</strong> in the installer. <strong>“Erase device”</strong> means a complete erase. Use it for a deliberate clean installation; first check your backup if the device is already configured. An update without erasing is only intended for a matching existing flash layout.</li>
+<li><strong>Confirm installation and wait.</strong> Do not disconnect the cable or close the browser. Wait for the completion message, not merely a progress bar.</li>
+<li><strong>Close the installer dialog.</strong> This releases the serial connection. If the firmware does not start after flashing, release BOOT and press RESET once. Wait for the USB device to reappear.</li>
+<li>Choose <strong>“Start setup”</strong> below, select the ESP again and connect. Now choose <strong>“Set up as new”</strong> or <strong>“Restore backup”</strong>. Restoration can start immediately, before Wi-Fi has been configured.</li>
+</ol>
+<div class="notice"><strong>Wrong chip?</strong> This installer is for ESP32-C6 only. If it reports another ESP, stop and select the correct board. Unlike the RoonPilot display, this board has no second Companion processor. Turning the USB-C plug does not select another ESP.</div>
+<h3>No device listed or connection failing?</h3>
+<ol>
+<li>Try another USB data cable and a direct USB port. Check that Chrome or Edge is allowed to show the USB chooser and no other program owns the serial port.</li>
+<li>For empty flash, or if automatic entry fails: <strong>hold BOOT, briefly press and release RESET, then release BOOT</strong>. Select the newly detected port again in the browser. This enters download mode without erasing settings.</li>
+<li>After successful flashing, leave BOOT released; press RESET once if necessary and start USB setup again.</li>
+</ol>
+<p>This sequence follows the <a class="inline-link" href="https://docs.waveshare.com/ESP32-C6-Zero/FAQ">Waveshare C6 Zero instructions</a>. It differs from holding BOOT for three seconds when DialCaptain firmware is already running.</p>
+<figure><button class="media-button" type="button" data-enlarge><img src="../assets/usb-installer-en.webp" alt="USB Web Installer: install firmware" loading="lazy" width="752" height="318"><span>Click to enlarge</span></button>
+<figcaption class=media-caption>The first step of the actual browser assistant. Setup starts separately afterwards.</figcaption>
+</figure>
+</section>
+<section id="wifi">
+<h2>03 · Wi-Fi & server</h2>
+<h3>Set up as new</h3>
+<ol>
+<li>After “Start setup”, connect the ESP and choose <strong>Set up as new</strong>.</li>
+<li>Select your <strong>2.4 GHz Wi-Fi</strong> from the list. “Search again” refreshes it; enter the network name manually for a hidden network. Enter the password only in its password field.</li>
+<li>Click <strong>“Test connection and save”</strong>. The ESP checks connectivity and only saves the new credentials after success. This can take about 20 seconds. If it fails, follow the displayed explanation; a failed attempt does not replace stored credentials.</li>
+<li>If the ESP is already connected, choose <strong>“Use connected Wi-Fi”</strong>.</li>
+</ol>
+<h3>If you want to use Roon</h3>
+<ol>
+<li>Select the discovered Roon Server and click <strong>“Select server and save”</strong>.</li>
+<li>If it is missing, check that Roon Server is running. Search again or enter its IP/hostname and API port under “Add a server by its address”. The default is <strong>9330</strong>. “Check server” verifies its identity before saving.</li>
+<li>In Roon, open <strong>Settings → Extensions</strong> and <strong>enable DialCaptain</strong>. Use “Check connection” in the assistant to refresh its status. Select your zone afterwards through the extension’s settings gear.</li>
+</ol>
+<p><strong>BluOS and WiiM</strong> do not require Roon approval. Once Wi-Fi is connected, choose <strong>“Activate web configuration” → “Open web configuration”</strong> in the additional section; skip the Roon Server selection.</p>
+<div class="notice">Your computer stays connected to its normal network. DialCaptain does not create a setup Wi-Fi hotspot. USB sends the Wi-Fi details directly to the ESP. The later device webpage uses the address assigned by your router, not <code>192.168.4.1</code>.</div>
+</section>
+<section id="pair">
+<h2>04 · Pair the Tap Dial</h2>
+<p>First pairing works without an already assigned remote. After configuring Wi-Fi, activate and open web configuration from the USB assistant. Alternatively hold BOOT on the running ESP for three seconds and open its known IP address.</p>
+<ol>
+<li>In <strong>“Pair Philips Hue Tap Dial”</strong>, choose <strong>“Pair your first Tap Dial”</strong>. Joining is open for three minutes.</li>
+<li>Place the new Tap Dial near the ESP. <strong>Hold button 1, marked with one dot, for about three seconds</strong> until its LED blinks.</li>
+<li>The browser shows <strong>Searching → Checking → Setting up → Done</strong>. During setup, press a button briefly from time to time to keep the battery-powered remote awake. These presses do not send music commands while pairing is active.</li>
+<li>The assignment is only saved at <strong>Done</strong>. Now choose your audio mode and button mappings.</li>
+</ol>
+<h3>Previously paired with a Hue Bridge or another ESP?</h3>
+<p>Reset only the <strong>Tap Dial itself</strong>: hold the SETUP button on its back for more than ten seconds. This removes its former Zigbee association. Then hold button 1 for about three seconds while the joining window is open. The ESP does not need a factory reset.</p>
+<h3>Set up again or replace</h3>
+<p><strong>“Set up the current Tap Dial again”</strong> repairs setup for the same remote; normally a brief press to wake it is enough. <strong>“Pair a different Tap Dial”</strong> asks for confirmation and only replaces the existing assignment after complete success. One ESP uses one assigned Tap Dial. Cancellation or expiry does not erase your current assignment or audio settings.</p>
+<p>References: <a class="inline-link" href="https://www.assets.signify.com/is/content/PhilipsLighting/8719514440999">Philips Hue manual</a> and <a class="inline-link" href="https://www.philips-hue.com/en-gb/p/hue-tap-dial-switch/8719514440999">product FAQ</a>.</p>
+<figure><button class="media-button" type="button" data-enlarge><img src="../assets/pairing-en.webp" alt="Tap Dial pairing section on the connected DialCaptain" loading="lazy" width="812" height="297"><span>Click to enlarge</span></button>
+<figcaption class=media-caption>The image shows the existing, already assigned remote. Pairing was not started for the screenshot.</figcaption>
+</figure>
+</section>
+<section id="roon">
+<h2>05 · Roon control</h2>
+<ol>
+<li>On the device webpage, select <strong>Control mode → Roon</strong> and save if another mode is active.</li>
+<li>In Roon, open <strong>Settings → Extensions → DialCaptain</strong>, enable it and open its settings gear.</li>
+<li>Choose <strong>Language / Sprache</strong>. It is independent of the Roon app language.</li>
+<li>Select your desired <strong>Roon zone</strong> from the list.</li>
+<li>Set <strong>Dial sensitivity</strong> and <strong>Steps per click</strong> separately. Choose 1–4 native Roon steps. For example, with an output using 0.5 dB per native step, two steps give 1 dB per click. The selected Roon volume provider determines the unit and resolution.</li>
+<li>Assign each of the four buttons a <strong>short and long action</strong>, such as Play/Pause, next/previous track, mute or a favourite.</li>
+<li>For each of the three favourites, choose <strong>Roon playlist</strong> or <strong>Roon radio station</strong>, then select the entry from the list. Radio entries come from <strong>My Live Radio</strong>. Use the next/previous pages for longer lists; there is no need to type names.</li>
+<li><strong>Save</strong>. At a low listening level, try one command first. The extension status line also shows the Tap Dial battery reading after its first report; until then it says that no reading is available.</li>
+</ol>
+<p>The screenshot shows an example zone with two native Roon steps per click. An RME Bridge can act as the volume provider in Roon; DialCaptain does not need its own RME or IR connection. A fixed-volume output may not be controllable with the ring.</p>
+<figure><button class="media-button" type="button" data-enlarge><img src="../assets/roon-settings.webp" alt="Roon extension: zone, dial, buttons and favourites" loading="lazy" width="745" height="1000"><span>Click to enlarge</span></button>
+<figcaption class=media-caption>Screenshot supplied by the developer. Names and available lists depend on your Roon library.</figcaption>
+</figure>
+</section>
+<section id="bluos">
+<h2>06 · BluOS control</h2>
+<ol>
+<li>Open the device webpage and select <strong>Control mode → BluOS control</strong>.</li>
+<li>Choose your player from network discovery. It shows names, models and addresses. If the list is empty, enter its IP address or hostname manually; the default port is <strong>11000</strong>. Use <strong>“Check player & load presets”</strong> to confirm the device. Discovery and checking do not start playback.</li>
+<li>Select three <strong>presets</strong> already stored on the player. Set up desired stations, playlists or other content as BluOS presets first; DialCaptain does not manage their contents.</li>
+<li>Assign short and long actions: Play/Pause, play, pause, previous/next, toggle mute, stop, preset 1–3 or no action. The player’s current source determines which transport actions are supported.</li>
+<li>Choose sensitivity and <strong>0.5 / 1 / 2 dB per click</strong>. Player limits and actual resolution still apply. A fixed output level is respected.</li>
+<li><strong>Save settings</strong>. Saving activates your selection. The Roon and WiiM profiles remain stored.</li>
+</ol>
+<p>Volume commands address the chosen BluOS player without explicitly adjusting its other group members. Failed or old commands are not replayed later. Tested examples do not imply that every BluOS model, source and grouping combination has been tested.</p>
+<figure><button class="media-button" type="button" data-enlarge><img src="../assets/bluos-en.webp" alt="BluOS form on the real DialCaptain" loading="lazy" width="812" height="1492"><span>Click to enlarge</span></button>
+<figcaption class=media-caption>Captured before saving; this does not change the active profile.</figcaption>
+</figure>
+</section>
+<section id="wiim">
+<h2>07 · WiiM control</h2>
+<ol>
+<li>In <strong>WiiM Home</strong>, save your chosen content as presets. Depending on the service, a preset may start radio, a playlist, an album or other content.</li>
+<li>Open the device webpage and select <strong>Control mode → WiiM control</strong>.</li>
+<li>Select your discovered WiiM or enter its IP address. The local HTTPS API normally uses <strong>port 443</strong>. <strong>“Check player & load presets”</strong> verifies the device and reads up to twelve presets.</li>
+<li>Choose three favourites from those presets and assign short/long button actions. Previous/next only work with sources that support them.</li>
+<li>If you want to control <strong>the WiiM’s own volume</strong>, enable <strong>“Control WiiM volume with the dial”</strong>. It is initially disabled for a new profile. Set 1 / 2 / 5 percentage points per click and sensitivity independently.</li>
+<li><strong>Save settings</strong>. Other mode profiles stay stored.</li>
+</ol>
+<div class="notice">Direct WiiM volume is not the volume of an external DAC. For a Roon zone using an RME volume provider, use <strong>Roon mode</strong>. DialCaptain does not change the WiiM output type automatically; configure a fixed/variable output yourself in WiiM Home as needed.</div>
+<p>DialCaptain does not browse entire streaming-service catalogues; presets are managed in WiiM Home. According to the WiiM API, mute may also affect members of an existing WiiM group. DialCaptain does not create groups. Integration has been tested with a WiiM Ultra; other models and sources may behave differently.</p>
+<figure><button class="media-button" type="button" data-enlarge><img src="../assets/wiim-en.webp" alt="WiiM form with separate dial-volume option" loading="lazy" width="812" height="1535"><span>Click to enlarge</span></button>
+<figcaption class=media-caption>Captured from the real device before saving.</figcaption>
+</figure>
+</section>
+<section id="web">
+<h2>08 · Web configuration</h2>
+<p>The web server is only needed for configuration and normally stays closed. The ESP still retains its network address.</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Entry point</th><th>How it works</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Tap Dial</td><td>By default, <strong>hold button 4 for at least eight seconds and release</strong>. Repeat this extra-long press to close the web server. It does not trigger the normal short/long action. Choose another button or disable just this shortcut in web configuration.</td>
+</tr>
+<tr><td>ESP BOOT button</td><td>Hold for three seconds on the <strong>running</strong> ESP to toggle the web server. Do not press RESET.</td>
+</tr>
+<tr><td>USB assistant</td><td>Connect the ESP; after the Wi-Fi step choose <strong>Activate web configuration</strong>, then <strong>Open web configuration</strong>. This works before your very first Tap Dial pairing.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The RGB LED gently blinks <strong>amber</strong> while web configuration is active. In a normal browser open the address shown by the assistant, for example <code>http://192.168.1.50/</code>. That is only an example; your router assigns the actual address. Your phone or computer must be able to reach the ESP on your home network.</p>
+<p>The page shows the remaining time. <strong>Extend by 10 minutes</strong> gives you more time; <strong>Close now</strong> ends it immediately. After ten minutes without interaction the HTTP service stops; background status polling does not extend the session. Zigbee, Wi-Fi and audio control keep running. Closing the web server does not put the ESP into deep sleep.</p>
+<p>The device page offers German/English, mode selection, pairing and file backup. Roon’s button actions and favourites are still configured through the extension settings gear.</p>
+</section>
+<section id="backup">
+<h2>09 · Backup & updates</h2>
+<h3>Export settings</h3>
+<p>Under <strong>“Back up and restore”</strong> on the device page or USB assistant choose <strong>“Export settings”</strong>. Your browser downloads a JSON file to your computer. It includes the saved state, not unsaved form edits.</p>
+<ul>
+<li>Wi-Fi credentials, active mode and web-access shortcut.</li>
+<li>Roon Server, authorization, zone, language, buttons, favourites, sensitivity and steps.</li>
+<li>Complete BluOS and WiiM profiles, including inactive modes.</li>
+<li>The selected Tap Dial and stored Zigbee network/pairing information for the <strong>same ESP</strong>.</li>
+</ul>
+<p>No extra password or cloud account is required. The file contains Wi-Fi and pairing keys: keep it private on your computer and do not attach it to a public bug report. Importing it onto a different ESP is not supported.</p>
+<h3>Restore directly after a clean USB installation</h3>
+<ol>
+<li>Close the installer dialog after flashing.</li>
+<li>Choose <strong>Start setup</strong>, connect the same ESP and choose <strong>Restore backup</strong>. Wi-Fi does not have to be configured yet.</li>
+<li>Select the JSON file and review the summary. Uploading and checking it does not yet change active settings.</li>
+<li>Confirm replacement and choose <strong>Prepare restoration</strong>.</li>
+<li>Use the separate <strong>Restart now</strong> button to apply it. Until then, other settings and audio-button commands are blocked. Keep power connected while restoration is being applied.</li>
+<li>Reconnect USB if necessary, or open the restored network address. Wake a sleeping Tap Dial with a brief button press.</li>
+</ol>
+<h3>Future firmware updates</h3>
+<p>DialCaptain has no dedicated OTA updater. Updates use the USB Web Installer. Export before a complete erase. Without “Erase device”, a compatible application/layout update may preserve settings; a clean installation removes them. A backup file is therefore the normal recovery path.</p>
+<div class="notice">Import validates the device, file format, checksum and Zigbee compatibility and uses a resumable application state. Do not make a factory reset your first response to a restore error. Complete restoration after a real factory flash has not yet received physical acceptance in this development version.</div>
+</section>
+<section id="support">
+<h2>10 · Troubleshooting</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Observation</th><th>Next step</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>No USB device / connection fails</td><td>Check a data cable, direct USB port and Chrome/Edge. Close serial monitors. For a factory-new/empty ESP, use the BOOT/RESET sequence above.</td>
+</tr>
+<tr><td>No setup after flashing</td><td>Close the installer dialog, release BOOT, press RESET once, then select “Start setup” and the newly detected ESP.</td>
+</tr>
+<tr><td>Wi-Fi connection fails</td><td>Check 2.4 GHz, the exact network name and password. Avoid isolated guest Wi-Fi. Retry over USB; a failed connection test does not replace saved credentials.</td>
+</tr>
+<tr><td>Device page does not load</td><td>Activate the temporary web server first. Use the actual ESP address shown by the assistant/router and check reachability on the same network.</td>
+</tr>
+<tr><td>Roon Server or player missing</td><td>Check that it is running. Network segmentation can filter discovery. Search again or check a manual address. Use 9330 for Roon, 11000 for BluOS and normally 443 for WiiM.</td>
+</tr>
+<tr><td>Tap Dial does not respond</td><td>Check its battery, assignment and active mode. Wake it briefly. Try “Set up again”. Deliberately reset an already elsewhere-paired remote when required, not the ESP.</td>
+</tr>
+<tr><td>Playback works, volume does not</td><td>Check the output in Roon. Respect fixed volume in BluOS; enable WiiM’s separate dial option and check its output configuration. Direct WiiM control does not adjust an external RME DAC.</td>
+</tr>
+<tr><td>Restore is rejected</td><td>Use the correct format from the same ESP. Preserve the error text. Do not import another coordinator’s pairing data or erase settings hastily.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>When reporting a problem, include the firmware version, mode, board model, failing step and exact error text. The USB installer console can help diagnose it. Do not copy Wi-Fi passwords or backup files into public reports.</p>
+<div class="actions"><a class="button secondary" href="https://github.com/mermayer/DialCaptain/issues" ><svg aria-hidden="true"><use href="#i-github"></use></svg>Ask a question or report an issue</a>
+</div>
+<p class="media-caption">Technical references: <a href="https://esphome.github.io/esp-web-tools/">ESP Web Tools</a>, <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32c6/get-started/establish-serial-connection.html">ESP32-C6 USB connection</a>, <a href="https://bluesoundprofessional.com/wp-content/uploads/2025/06/BluOS-Custom-Integration-API_v1.7.pdf">BluOS API</a>, <a href="https://www.wiimhome.com/pdf/HTTP%20API%20for%20WiiM%20Products.pdf">WiiM API</a>.</p>
+</section>
+</article>
+</div>
+</div>
+</main>
+<footer class="site-footer page-width">
+<div class="footer-main">
+<div><a class="footer-brand" href="../"><img src="../assets/favicon.svg" alt="" width="30" height="30">DialCaptain</a>
+<p class="footer-copy">A hobby project by Senior Coder, made for the joy of music and technology. Audio control runs locally on your ESP.</p>
+</div>
+<div class="footer-links"><a href="https://github.com/mermayer/DialCaptain">GitHub home</a><a href="#ready">Guide</a><a href="https://github.com/mermayer/DialCaptain/issues">Questions & issues</a><a href="https://mermayer.github.io/RoonPilot/">RoonPilot</a>
+</div>
+</div>
+<p class="footer-copy">If you would like to support development, entirely voluntarily:</p>
+<div class="support-links"><a class="button" href="https://buy.stripe.com/6oU3cw0eV0hC5nbdlX2Fa00">Send Me a Coffee</a><a class="button" href="https://buymeacoffee.com/mermayer">Buy Me a Coffee</a>
+</div>
+</footer>
+<dialog class="image-dialog" aria-label="Enlarged image">
+<div class="dialog-head">
+<p class="dialog-caption">
+</p><button class="button small" type="button">Close</button>
+</div><img alt="">
+</dialog></body></html>

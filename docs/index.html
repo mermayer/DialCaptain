@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#07090a"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Philips Hue Tap Dial + ESP32-C6: Roon, BluOS, WiiM. USB setup, configuration and printable enclosure."><title>DialCaptain — A real dial for Roon, BluOS and WiiM</title><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/foundation.css"><link rel="stylesheet" href="assets/project.css"><script src="assets/navigation.js" defer></script><script src="assets/project.js" defer></script></head>
+<body class="project-page"><a class="skip-link" href="#main">Skip to content</a><svg class="icon-sprite" aria-hidden="true"><symbol id="i-usb" viewBox="0 0 24 24"><path d="M12 3v15M9 6l3-3 3 3M12 11l-5 4H4M12 14l5 4h3"/><circle cx="4" cy="15" r="1"/><rect x="19" y="17" width="2" height="2"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5v16M12 5C8 2 4 3 3 4v15c3-1 6-1 9 2 3-3 6-3 9-2V4c-1-1-5-2-9 1Z"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 19v2h16v-2"/></symbol><symbol id="i-github" viewBox="0 0 24 24"><path d="M9 21v-4c-4 1-4-2-6-2M15 21v-4c0-1-.5-2-1-2 4-.5 6-2 6-6 0-1-.5-3-1-3 .5-1 .5-3 0-3-2 0-3 1-4 1-2-.5-4-.5-6 0-1 0-2-1-4-1-.5 0-.5 2 0 3-.5 0-1 2-1 3 0 4 2 5.5 6 6-.5 0-1 1-1 2"/></symbol></svg>
+<header class="site-header">
+<div class="header-inner"><a class="brand" href="#overview" aria-label="DialCaptain"><img src="assets/favicon.svg" alt="" width="30" height="30"><span>Dial<em>Captain</em></span></a>
+<nav aria-label="Main navigation"><a href="#overview">Overview</a><a href="#control">Control</a><a href="#hardware">Hardware</a><a href="#installation">Setup</a><a href="#configuration">Configuration</a><a href="#enclosure">Enclosure</a><a href="#help">Help</a>
+</nav>
+<div class="header-actions"><a class="language-link" href="de/" lang="de">Deutsch</a><a class="header-link" href="https://github.com/mermayer/DialCaptain" aria-label="GitHub home"><svg aria-hidden="true"><use href="#i-github"></use></svg><span>GitHub home</span></a>
+<details class="mobile-menu">
+<summary>Menu</summary>
+<div class="mobile-links"><a href="#overview">Overview</a><a href="#control">Control</a><a href="#hardware">Hardware</a><a href="#installation">Setup</a><a href="#configuration">Configuration</a><a href="#enclosure">Enclosure</a><a href="#help">Help</a>
+</div>
+</details>
+</div>
+</div>
+</header>
+<main id="main">
+<section id="overview" class="hero page-width">
+<div class="hero-copy">
+<h1>Your music.<br>At your fingertips.</h1>
+<p>A Philips Hue Tap Dial. A tiny ESP32-C6. Your favourite music in Roon, BluOS or WiiM – controlled by a real dial and four configurable buttons.</p>
+<div class="hero-actions"><a class="button primary" href="firmware/?lang=en" ><svg aria-hidden="true"><use href="#i-usb"></use></svg>Install & set up</a><a class="button secondary" href="guide/" ><svg aria-hidden="true"><use href="#i-book"></use></svg>Read the guide</a><a class="button secondary" href="#hardware" ><svg aria-hidden="true"><use href="#i-arrow"></use></svg>What you need</a><a class="button secondary" href="#enclosure" ><svg aria-hidden="true"><use href="#i-download"></use></svg>Enclosure & STL</a>
+</div>
+<div class="release-note"><strong>Private development preview · 0.2.0-dev.8</strong><br>Formerly RoonPilot Light. These pages and the installer are in preparation; there is no stable DialCaptain release yet.</div>
+</div>
+<figure class="hero-image"><img src="assets/tap-dial.webp" alt="Philips Hue Tap Dial" width="1120" height="1024" fetchpriority="high">
+<figcaption>The Tap Dial stays battery powered. The ESP needs continuous USB power.</figcaption>
+</figure>
+</section>
+<div class="signal-path page-width"><strong>Tap Dial</strong><span>ZIGBEE →</span><strong>ESP32-C6</strong><span>WI-FI →</span><strong>Roon · BluOS · WiiM</strong>
+</div>
+<section id="control" class="content-section page-width">
+<div class="section-heading">
+<p class="section-number">01</p>
+<div>
+<h2>Three ways to your music.</h2>
+<p>One mode is active at a time. Settings for the other modes stay saved.</p>
+</div>
+</div>
+<div class="mode-grid">
+<article>
+<h3>Roon</h3>
+<p>Control your zone, playback and volume directly through Roon Server. Choose playlists and My Live Radio stations from lists. Configure everything in the extension’s settings gear.</p><a href="guide/#roon">How to set it up →</a>
+</article>
+<article>
+<h3>BluOS</h3>
+<p>Control Bluesound, NAD and other BluOS players directly over your home network. Discover your player, select its saved presets and assign short and long button actions.</p><a href="guide/#bluos">How to set it up →</a>
+</article>
+<article>
+<h3>WiiM</h3>
+<p>Control WiiM directly through its local API. Use presets saved in WiiM Home. Assign playback, previous/next and optional native WiiM volume to the dial.</p><a href="guide/#wiim">How to set it up →</a>
+</article>
+</div>
+<div class="scope-note">
+<p><strong>No extra computer.</strong> The firmware runs on the ESP. No Hue Bridge, Raspberry Pi, Docker, MQTT or always-on PC is needed. Roon mode still requires Roon Server.</p>
+<p><strong>A controller, not an audio player.</strong> The ESP does not stream music, act as a Roon audio endpoint or replace your player or DAC. A Tap Dial belongs to one Zigbee network at a time.</p>
+</div>
+</section>
+<section id="hardware" class="content-section page-width">
+<div class="section-heading">
+<p class="section-number">02</p>
+<div>
+<h2>Small hardware. Clear purpose.</h2>
+<p>A dial, an ESP and your existing audio system are all you need.</p>
+</div>
+</div>
+<div class="split">
+<figure class="hardware-image"><img src="assets/esp32-c6-zero.webp" alt="ESP32-C6 Zero board with USB-C, RGB LED, BOOT and RESET buttons" width="683" height="900" loading="lazy">
+<figcaption>ESP32-C6 Zero · 8 MB Flash · USB-C</figcaption>
+</figure>
+<div><dl class="detail-list"><dt>Tap Dial</dt><dd><strong>Philips Hue Tap Dial RDM002</strong><br>Four buttons and a rotary ring; its own battery supply.</dd><dt>ESP</dt><dd><strong>ESP32-C6 Zero, 8 MB</strong><br>The development target is this board. Other ESP variants are not interchangeable targets.</dd><dt>USB</dt><dd>A USB data cable for setup, then continuous 5 V USB power for the ESP.</dd><dt>WLAN</dt><dd>2.4 GHz home Wi-Fi; the ESP, player and, if used, Roon Server must be able to reach each other.</dd></dl>
+<div class="notice">The ESP32-C6 includes Wi-Fi and Zigbee. No additional radio module or Companion firmware is needed.</div>
+<p class="media-caption"><a class="inline-link" href="https://www.waveshare.com/wiki/ESP32-C6-Zero">Board information at Waveshare</a>
+</p>
+</div>
+</div>
+</section>
+<section id="installation" class="content-section page-width">
+<div class="section-heading">
+<p class="section-number">03</p>
+<div>
+<h2>From a USB cable to your music.</h2>
+<p>Initial setup runs directly over USB in your browser. No setup Wi-Fi network or 192.168.4.1 address is involved.</p>
+</div>
+</div>
+<div class="steps-grid">
+<article>
+<h3>Install firmware</h3>
+<p>Open Chrome or Edge, connect the ESP with a USB data cable and select it in the installer.</p>
+</article>
+<article>
+<h3>Start USB setup</h3>
+<p>Close the installer dialog. Set up as new or immediately restore a backup from the same ESP.</p>
+</article>
+<article>
+<h3>Connect Wi-Fi</h3>
+<p>Select your 2.4 GHz Wi-Fi. For Roon, also choose your server and approve the extension.</p>
+</article>
+<article>
+<h3>Pair & configure</h3>
+<p>Open web configuration, pair the Tap Dial and configure Roon, BluOS or WiiM with your chosen actions.</p>
+</article>
+</div>
+<div class="notice"><strong>Already configured?</strong> Export your settings before a complete erase. The file includes Wi-Fi and Tap Dial pairing. Restoration shows a preview and provides a separate restart button.</div>
+<div class="actions"><a class="button primary" href="firmware/?lang=en" ><svg aria-hidden="true"><use href="#i-usb"></use></svg>Open USB Web Installer</a><a class="button secondary" href="guide/#usb" ><svg aria-hidden="true"><use href="#i-book"></use></svg>Follow every step</a>
+</div>
+</section>
+<section id="configuration" class="content-section page-width">
+<div class="section-heading">
+<p class="section-number">04</p>
+<div>
+<h2>Set it up your way.</h2>
+<p>Four buttons, short and long actions and your own dial response. Each mode keeps its own profile.</p>
+</div>
+</div>
+<div class="screenshot-tabs" role="tablist" aria-label="Control modes"><button role="tab" id="tab-roon" aria-controls="panel-roon" aria-selected="true" tabindex="0">Roon</button><button role="tab" id="tab-bluos" aria-controls="panel-bluos" aria-selected="false" tabindex="-1">BluOS</button><button role="tab" id="tab-wiim" aria-controls="panel-wiim" aria-selected="false" tabindex="-1">WiiM</button>
+</div>
+<div id="panel-roon" class="screenshot-panel" role="tabpanel" aria-labelledby="tab-roon" >
+<div class="screenshot-copy">
+<h3>At home in Roon.</h3>
+<p>Enable the extension, select a zone and assign the buttons. Choose a language independently of Roon. The Tap Dial battery reading appears in the extension status after its first report.</p><a class="inline-link" href="guide/#roon">Read the complete instructions →</a>
+</div>
+<figure><button class="media-button" type="button" data-enlarge><img src="assets/roon-settings.webp" alt="ROON configuration in DialCaptain" loading="lazy" width="745" height="1000"><span>Click to enlarge</span></button>
+<figcaption class=media-caption>Roon extension: screenshot supplied by the developer.</figcaption>
+</figure>
+</div>
+<div id="panel-bluos" class="screenshot-panel" role="tabpanel" aria-labelledby="tab-bluos" hidden>
+<div class="screenshot-copy">
+<h3>Your BluOS player. Direct.</h3>
+<p>Select a player discovered on your network or enter its address. Choose its saved presets, button actions, sensitivity and volume steps in dB.</p><a class="inline-link" href="guide/#bluos">Read the complete instructions →</a>
+</div>
+<figure><button class="media-button" type="button" data-enlarge><img src="assets/bluos-en.webp" alt="BLUOS configuration in DialCaptain" loading="lazy" width="812" height="1492"><span>Click to enlarge</span></button>
+<figcaption class=media-caption>Web interface captured from the device; mode selected in the form before saving.</figcaption>
+</figure>
+</div>
+<div id="panel-wiim" class="screenshot-panel" role="tabpanel" aria-labelledby="tab-wiim" hidden>
+<div class="screenshot-copy">
+<h3>WiiM with your presets.</h3>
+<p>Find your WiiM, choose presets from WiiM Home and assign buttons. Direct WiiM volume is a separate option, initially disabled in a new profile.</p><a class="inline-link" href="guide/#wiim">Read the complete instructions →</a>
+</div>
+<figure><button class="media-button" type="button" data-enlarge><img src="assets/wiim-en.webp" alt="WIIM configuration in DialCaptain" loading="lazy" width="812" height="1535"><span>Click to enlarge</span></button>
+<figcaption class=media-caption>Web interface captured from the device; mode selected in the form before saving.</figcaption>
+</figure>
+</div>
+<div class="notice"><strong>The web server does not stay on.</strong> Hold Tap Dial button 4 for eight seconds and release, or hold BOOT on the running ESP for three seconds. Amber blinking means web configuration is active. It closes after ten minutes without interaction; audio control keeps running.</div>
+</section>
+<section id="enclosure" class="content-section page-width">
+<div class="section-heading">
+<p class="section-number">05</p>
+<div>
+<h2>A home for the ESP.</h2>
+<p>The printable enclosure designs are provided as STL files.</p>
+</div>
+</div>
+<div class="split">
+<figure class="enclosure-image"><img src="assets/enclosure.svg" alt="Isometric view of the case and lid from the original STL data" width="720" height="440" loading="lazy">
+<figcaption>View projected from the supplied STL designs, not a photograph of a finished print.</figcaption>
+</figure>
+<div>
+<ul class="download-list">
+<li><a href="downloads/enclosure/case.stl" download><svg aria-hidden="true"><use href="#i-download"></use></svg>case.stl</a><small>Case · 52 × 52 × 49.6 mm</small>
+</li>
+<li><a href="downloads/enclosure/deckel.stl" download><svg aria-hidden="true"><use href="#i-download"></use></svg>deckel.stl</a><small>Lid · print one</small>
+</li>
+<li><a href="downloads/enclosure/fuss_1x_drucken_4x.stl" download><svg aria-hidden="true"><use href="#i-download"></use></svg>fuss_1x_drucken_4x.stl</a><small>Standard foot · print four</small>
+</li>
+<li><a href="downloads/enclosure/fuss_1x_drucken_4x_KURZ.stl" download><svg aria-hidden="true"><use href="#i-download"></use></svg>fuss_1x_drucken_4x_KURZ.stl</a><small>Short foot · alternative, print four</small>
+</li>
+</ul><a class="button secondary" href="downloads/enclosure/DialCaptain-enclosure-STL.zip" download><svg aria-hidden="true"><use href="#i-download"></use></svg>Download all STL files</a>
+<p class="media-caption">Design drafts: check fit and print settings on your own printer. Choose standard or short feet. Slice the STL files yourself; no printer-specific G-code is distributed.</p>
+</div>
+</div>
+</section>
+<section id="help" class="content-section page-width">
+<div class="section-heading">
+<p class="section-number">06</p>
+<div>
+<h2>Good to know.</h2>
+<p>The complete guide also covers first pairing, backups and troubleshooting.</p>
+</div>
+</div>
+<div class="faq">
+<details>
+<summary>Do I need a Hue Bridge or RoonPilot?</summary>
+<p>No. The ESP is the Zigbee coordinator. DialCaptain works independently. RoonPilot and an RME Bridge may complement your Roon system, but are not required.</p>
+</details>
+<details>
+<summary>What survives a mode change?</summary>
+<p>All three profiles stay saved. Saving activates the new mode. Your Roon zone, authorization, favourites and separate BluOS/WiiM mappings are not erased by switching.</p>
+</details>
+<details>
+<summary>Where are the volume steps?</summary>
+<p>Roon: 1–4 native Roon steps per click; the chosen output determines the unit. BluOS: 0.5 / 1 / 2 dB. WiiM: optional 1 / 2 / 5 percentage points. Sensitivity and step size are separate settings.</p>
+</details>
+<details>
+<summary>Can I back up the pairing?</summary>
+<p>Yes. File export includes settings and the stored Tap Dial/Zigbee association for the same ESP. The file includes credentials and is saved on your computer.</p>
+</details>
+<details>
+<summary>What is the development status?</summary>
+<p>Roon, BluOS and WiiM are implemented; basic control and several device flows have been tested. Complete first pairing of a new Tap Dial and restoration after a real factory flash still need separate hardware acceptance. Eversolo and an OTA updater are not implemented.</p>
+</details>
+</div>
+<div class="actions"><a class="button primary" href="guide/" ><svg aria-hidden="true"><use href="#i-book"></use></svg>Complete guide</a><a class="button secondary" href="guide/#support" ><svg aria-hidden="true"><use href="#i-arrow"></use></svg>Troubleshooting</a><a class="button secondary" href="https://github.com/mermayer/DialCaptain" ><svg aria-hidden="true"><use href="#i-github"></use></svg>GitHub home</a>
+</div>
+</section>
+</main>
+<footer class="site-footer page-width">
+<div class="footer-main">
+<div><a class="footer-brand" href="#overview"><img src="assets/favicon.svg" alt="" width="30" height="30">DialCaptain</a>
+<p class="footer-copy">A hobby project by Senior Coder, made for the joy of music and technology. Audio control runs locally on your ESP.</p>
+</div>
+<div class="footer-links"><a href="https://github.com/mermayer/DialCaptain">GitHub home</a><a href="guide/">Guide</a><a href="https://github.com/mermayer/DialCaptain/issues">Questions & issues</a><a href="https://mermayer.github.io/RoonPilot/">RoonPilot</a>
+</div>
+</div>
+<p class="footer-copy">If you would like to support development, entirely voluntarily:</p>
+<div class="support-links"><a class="button" href="https://buy.stripe.com/6oU3cw0eV0hC5nbdlX2Fa00">Send Me a Coffee</a><a class="button" href="https://buymeacoffee.com/mermayer">Buy Me a Coffee</a>
+</div>
+</footer>
+<dialog class="image-dialog" aria-label="Enlarged image">
+<div class="dialog-head">
+<p class="dialog-caption">
+</p><button class="button small" type="button">Close</button>
+</div><img alt="">
+</dialog></body></html>

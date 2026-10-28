@@ -79,13 +79,28 @@ h1,h2,h3,p { margin-top:0; }
 .media-button img { max-height:480px; margin:auto; width:auto; }
 .media-button>span { display:block; margin-top:15px; color:var(--accent); font-size:13px; }
 .media-caption { color:var(--muted); font-size:13px; margin-top:14px; }
-.enclosure-image { background:var(--surface); border-radius:18px; padding:25px; margin:0; }
-.enclosure-image img { width:100%; }
-.enclosure-image figcaption { font-size:13px; color:var(--muted); margin-top:16px; }
-.download-list { list-style:none; padding:0; margin:25px 0; }
-.download-list li { padding:12px 0; border-bottom:1px solid var(--line); }
-.download-list a { color:var(--accent); display:inline-flex; align-items:center; gap:8px; font-size:15px; }
-.download-list small { display:block; color:var(--muted); margin-top:4px; }
+.enclosure-layout { display:grid; grid-template-columns:minmax(0,1.12fr) minmax(0,1fr); gap:36px; align-items:start; }
+.enclosure-overview { margin:0; min-width:0; }
+.enclosure-overview .model-overview { display:block; padding:0; overflow:hidden; }
+.model-overview img { width:100%; height:auto; max-height:none; }
+.model-overview>span { display:flex; align-items:center; justify-content:center; gap:8px; margin:0; padding:13px 18px; border-top:1px solid var(--line); }
+.model-overview>span svg { width:15px; height:15px; }
+.enclosure-overview figcaption { font-size:12px; line-height:1.6; color:var(--muted); margin-top:13px; }
+.model-downloads { display:grid; gap:12px; }
+.model-card { display:flex; align-items:center; gap:16px; padding:12px; border:1px solid var(--line); border-radius:12px; background:rgba(255,255,255,.018); transition:border-color .18s,background .18s; }
+.model-card:focus-within,.model-card:hover { border-color:rgba(var(--accent-rgb),.5); background:rgba(var(--accent-rgb),.035); }
+.model-preview { flex:0 0 100px; padding:0; border:1px solid var(--line); border-radius:8px; overflow:hidden; background:var(--surface); transition:border-color .18s; }
+.model-preview:hover { border-color:var(--accent); }
+.model-preview img { display:block; width:100%; height:auto; }
+.model-download { flex:1; min-width:0; display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text); }
+.model-download>span { flex:1; min-width:0; }
+.model-download strong { display:block; font-size:16px; font-weight:600; }
+.model-download small { display:block; margin-top:3px; color:var(--muted-strong); font-size:12px; line-height:1.5; }
+.model-filename { display:block; margin-top:4px; color:var(--muted); font:11px/1.5 Consolas,monospace; overflow-wrap:anywhere; }
+.model-download>svg { flex:0 0 19px; color:var(--accent); }
+.enclosure-footer { display:flex; align-items:center; gap:36px; margin-top:28px; padding-top:25px; border-top:1px solid var(--line); }
+.enclosure-footer .button { flex-shrink:0; }
+.enclosure-footer p { margin:0; font-size:13px; line-height:1.65; color:var(--muted); max-width:760px; }
 .faq { max-width:900px; }
 .faq details { padding:20px 0; border-top:1px solid var(--line); }
 .faq summary { cursor:pointer; font-weight:600; font-size:18px; list-style-position:outside; margin-left:20px; }
@@ -146,6 +161,9 @@ code { overflow-wrap:anywhere; }
  .mobile-menu .mobile-links { position:absolute; top:40px; right:0; width:250px; max-height:75vh; overflow:auto; padding:18px; background:var(--surface); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow); }
  .mobile-links a { display:block; padding:8px 0; font-size:14px; text-decoration:none; }
  .hero { gap:25px; min-height:580px; }
+ .enclosure-layout { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:24px; }
+ .model-card { gap:12px; padding:10px; }
+ .model-preview { flex-basis:80px; }
  .guide-layout { grid-template-columns:210px minmax(0,1fr); gap:30px; }
  .steps-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
@@ -171,6 +189,14 @@ code { overflow-wrap:anywhere; }
  .section-heading h2 { font-size:34px; }
  .section-heading p:last-child { font-size:16px; }
  .mode-grid,.split,.scope-note,.screenshot-panel { grid-template-columns:1fr; gap:25px; }
+ .enclosure-layout { grid-template-columns:1fr; gap:25px; }
+ .enclosure-overview { max-width:600px; width:100%; margin-inline:auto; }
+ .model-downloads { width:100%; }
+ .model-preview { flex-basis:88px; }
+ .model-overview img { max-height:none; }
+ .enclosure-footer { display:block; padding-top:22px; margin-top:24px; }
+ .enclosure-footer .button { width:100%; }
+ .enclosure-footer p { margin-top:17px; }
  .mode-grid article { padding-top:20px; }
  .scope-note { margin-top:25px; }
  .hardware-image { margin:0; }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#07090a"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Philips Hue Tap Dial + ESP32-C6: Roon, BluOS, WiiM. USB setup, configuration and printable enclosure."><title>DialCaptain — A real dial for Roon, BluOS and WiiM</title><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/foundation.css"><link rel="stylesheet" href="assets/project.css"><script src="assets/navigation.js" defer></script><script src="assets/project.js" defer></script></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#07090a"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Philips Hue Tap Dial + ESP32-C6: Roon, BluOS, WiiM. USB setup, configuration and printable enclosure."><title>DialCaptain — A real dial for Roon, BluOS and WiiM</title><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/foundation.css"><link rel="stylesheet" href="assets/project.css?v=enclosure-2"><script src="assets/navigation.js" defer></script><script src="assets/project.js" defer></script></head>
 <body class="project-page"><a class="skip-link" href="#main">Skip to content</a><svg class="icon-sprite" aria-hidden="true"><symbol id="i-usb" viewBox="0 0 24 24"><path d="M12 3v15M9 6l3-3 3 3M12 11l-5 4H4M12 14l5 4h3"/><circle cx="4" cy="15" r="1"/><rect x="19" y="17" width="2" height="2"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5v16M12 5C8 2 4 3 3 4v15c3-1 6-1 9 2 3-3 6-3 9-2V4c-1-1-5-2-9 1Z"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 19v2h16v-2"/></symbol><symbol id="i-github" viewBox="0 0 24 24"><path d="M9 21v-4c-4 1-4-2-6-2M15 21v-4c0-1-.5-2-1-2 4-.5 6-2 6-6 0-1-.5-3-1-3 .5-1 .5-3 0-3-2 0-3 1-4 1-2-.5-4-.5-6 0-1 0-2-1-4-1-.5 0-.5 2 0 3-.5 0-1 2-1 3 0 4 2 5.5 6 6-.5 0-1 1-1 2"/></symbol></svg>
 <header class="site-header">
 <div class="header-inner"><a class="brand" href="#overview" aria-label="DialCaptain"><img src="assets/favicon.svg" alt="" width="30" height="30"><span>Dial<em>Captain</em></span></a>
@@ -149,27 +149,21 @@
 <p class="section-number">05</p>
 <div>
 <h2>A home for the ESP.</h2>
-<p>The printable enclosure designs are provided as STL files.</p>
+<p>Case, lid and two foot options — preview every part and download the original STL files.</p>
 </div>
 </div>
-<div class="split">
-<figure class="enclosure-image"><img src="assets/enclosure.svg" alt="Isometric view of the case and lid from the original STL data" width="720" height="440" loading="lazy">
-<figcaption>View projected from the supplied STL designs, not a photograph of a finished print.</figcaption>
+<div class="enclosure-layout">
+<figure class="enclosure-overview"><button class="media-button model-overview" type="button" data-enlarge aria-label="Enlarge the case and lid preview"><img src="assets/enclosure-overview.webp" alt="3D rendering of the open DialCaptain case and the inside of its lid" width="1500" height="1125" loading="lazy"><span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg>Click to enlarge</span></button>
+<figcaption>Rendered from the original STL files. This is a model preview, not a photograph of a finished print.</figcaption>
 </figure>
-<div>
-<ul class="download-list">
-<li><a href="downloads/enclosure/case.stl" download><svg aria-hidden="true"><use href="#i-download"></use></svg>case.stl</a><small>Case · 52 × 52 × 49.6 mm</small>
-</li>
-<li><a href="downloads/enclosure/deckel.stl" download><svg aria-hidden="true"><use href="#i-download"></use></svg>deckel.stl</a><small>Lid · print one</small>
-</li>
-<li><a href="downloads/enclosure/fuss_1x_drucken_4x.stl" download><svg aria-hidden="true"><use href="#i-download"></use></svg>fuss_1x_drucken_4x.stl</a><small>Standard foot · print four</small>
-</li>
-<li><a href="downloads/enclosure/fuss_1x_drucken_4x_KURZ.stl" download><svg aria-hidden="true"><use href="#i-download"></use></svg>fuss_1x_drucken_4x_KURZ.stl</a><small>Short foot · alternative, print four</small>
-</li>
-</ul><a class="button secondary" href="downloads/enclosure/DialCaptain-enclosure-STL.zip" download><svg aria-hidden="true"><use href="#i-download"></use></svg>Download all STL files</a>
-<p class="media-caption">Design drafts: check fit and print settings on your own printer. Choose standard or short feet. Slice the STL files yourself; no printer-specific G-code is distributed.</p>
+<div class="model-downloads" aria-label="Four enclosure models: previews and STL downloads">
+<div class="model-card"><button class="model-preview" type="button" data-enlarge aria-label="Enlarge the case preview"><img src="assets/enclosure-case.webp" alt="3D preview of the open case with its internal board supports" width="900" height="675" loading="lazy"></button><a class="model-download" href="downloads/enclosure/case.stl" download><span><strong>Case</strong><small>52 × 52 × 49.6 mm · print one</small><span class="model-filename">case.stl</span></span><svg aria-hidden="true"><use href="#i-download"></use></svg></a></div>
+<div class="model-card"><button class="model-preview" type="button" data-enlarge aria-label="Enlarge the lid preview"><img src="assets/enclosure-lid.webp" alt="3D preview of the lid, showing its clips and USB opening" width="900" height="675" loading="lazy"></button><a class="model-download" href="downloads/enclosure/deckel.stl" download><span><strong>Lid</strong><small>Inside view · print one</small><span class="model-filename">deckel.stl</span></span><svg aria-hidden="true"><use href="#i-download"></use></svg></a></div>
+<div class="model-card"><button class="model-preview" type="button" data-enlarge aria-label="Enlarge the standard foot preview"><img src="assets/enclosure-foot.webp" alt="3D preview of the standard-height enclosure foot" width="900" height="675" loading="lazy"></button><a class="model-download" href="downloads/enclosure/fuss_1x_drucken_4x.stl" download><span><strong>Standard foot</strong><small>16 mm high · print four</small><span class="model-filename">fuss_1x_drucken_4x.stl</span></span><svg aria-hidden="true"><use href="#i-download"></use></svg></a></div>
+<div class="model-card"><button class="model-preview" type="button" data-enlarge aria-label="Enlarge the short foot preview"><img src="assets/enclosure-short.webp" alt="3D preview of the shorter alternative enclosure foot" width="900" height="675" loading="lazy"></button><a class="model-download" href="downloads/enclosure/fuss_1x_drucken_4x_KURZ.stl" download><span><strong>Short foot</strong><small>About 12 mm high · alternative, print four</small><span class="model-filename">fuss_1x_drucken_4x_KURZ.stl</span></span><svg aria-hidden="true"><use href="#i-download"></use></svg></a></div>
 </div>
 </div>
+<div class="enclosure-footer"><a class="button secondary" href="downloads/enclosure/DialCaptain-enclosure-STL.zip" download><svg aria-hidden="true"><use href="#i-download"></use></svg>Download all STL files</a><p>Design drafts: check fit and print settings on your own printer. Choose four matching standard or short feet. Slice the STL files yourself; no printer-specific G-code is distributed.</p></div>
 </section>
 <section id="help" class="content-section page-width">
 <div class="section-heading">

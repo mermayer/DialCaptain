@@ -241,3 +241,11 @@ code { overflow-wrap:anywhere; }
 /* Installation tutorial, added without replacing existing navigation. */
 .hero-actions .video-guide-link{grid-column:1 / -1;background:rgba(255,176,0,.065)}
 .video-guide-link span{font-size:19px;color:var(--accent)}
+
+/* Compact battery and USB-power facts near the introduction. */
+.power-highlights { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; max-width:580px; margin:22px 0 0; padding:0; list-style:none; }
+.power-highlights li { min-width:0; padding-top:10px; border-top:1px solid rgba(var(--accent-rgb),.35); }
+.power-highlights strong { display:block; color:var(--accent); font-size:17px; line-height:1.4; }
+.power-highlights span { display:block; margin-top:4px; color:var(--muted-strong); font-size:13px; line-height:1.5; }
+.hero-copy > .power-footnote { max-width:580px; margin:12px 0 0; color:var(--muted); font-size:12px; line-height:1.6; }
+.power-footnote a { color:var(--accent); }

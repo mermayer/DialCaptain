@@ -27,7 +27,15 @@ die Einstellungen der anderen bleiben erhalten.
 - **WiiM:** Player und WiiM-Home-Presets wählen; die eigene WiiM-Lautstärke kann
   ausdrücklich für den Ring aktiviert werden.
 
-Der Tap Dial bleibt batteriebetrieben. Der ESP benötigt dauerhaft USB-Strom.
+**Lange Batterielaufzeit:** Philips Hue nennt für den Tap Dial mit einer CR2032
+**mindestens zwei Jahre**. Das ist eine [Herstellerangabe](https://www.philips-hue.com/de-de/p/hue-tap-dial-switch/8719514440999);
+die tatsächliche Laufzeit hängt von der Nutzung ab. Für DialCaptain liegt noch
+keine Langzeitmessung vor.
+
+**Kleine USB-Stromversorgung:** Der ESP braucht dauerhaft Strom; ein kleines,
+stabiles **5-V-USB-Netzteil genügt**. Ein leistungsstarkes Schnellladegerät ist
+nicht erforderlich. Konkrete Verbrauchswerte wurden noch nicht gemessen.
+
 Eine Hue Bridge, RoonPilot oder ein zusätzlicher Computer-Dienst sind nicht
 nötig. Roon benötigt einen Roon Server; BluOS und WiiM werden direkt gesteuert.
 DialCaptain überträgt Steuerbefehle und spielt selbst keine Musik ab.

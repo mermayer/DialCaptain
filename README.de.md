@@ -50,6 +50,19 @@ alternativ BOOT am laufenden ESP drei Sekunden halten. Bernsteinfarbenes
 Blinken zeigt den aktiven Webserver; nach zehn Minuten ohne Bedienung
 schließt er. Die Audiosteuerung läuft weiter.
 
+## Weitere Geräte und zukünftige Erweiterungen
+
+DialCaptain lässt sich grundsätzlich auch für Netzwerk-Player, Verstärker und
+andere Audiogeräte weiterer Hersteller erweitern, wenn sie eine vom ESP
+erreichbare **REST-API** mit passenden Steuerbefehlen bereitstellen. Welche
+Funktionen möglich sind – beispielsweise Lautstärke, Play/Pause, Quellen oder
+Presets – und welcher Zugriff nötig ist, hängt von der jeweiligen API ab.
+
+Für jedes weitere System muss eine passende Anbindung umgesetzt und am Gerät
+getestet werden. Dafür fehlen derzeit vor allem geeignete Testgeräte.
+**Aktuell verfügbar sind Roon, BluOS und WiiM.** Die Erweiterbarkeit bedeutet
+keine bereits vorhandene Unterstützung beliebiger Netzwerkgeräte.
+
 ## Stand der Projektseiten
 
 Die [deutschen](https://mermayer.github.io/DialCaptain/de/) und

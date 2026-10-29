@@ -48,6 +48,19 @@ seconds and release, or hold BOOT on the running ESP for three seconds.
 Amber blinking indicates an active web server. It closes after ten minutes
 without interaction; audio control continues.
 
+## More devices and future extensions
+
+DialCaptain can in principle be extended to other network players, amplifiers
+and audio equipment from additional manufacturers if they provide a **REST API**
+with suitable control commands, reachable from the ESP. The API determines the
+available functions, such as volume, play/pause, sources or presets, and the
+access requirements.
+
+Each additional system needs an integration to be implemented and tested on
+the device. Suitable test devices are currently the main missing resource.
+**Roon, BluOS and WiiM are available today.** Extensibility does not mean that
+arbitrary network devices are already supported.
+
 ## Project-page status
 
 The [English](https://mermayer.github.io/DialCaptain/) and

@@ -56,3 +56,17 @@
 !/docs/index.html
 !/docs/license/index.html
 !/docs/de/license/index.html
+
+!/docs/video/
+!/docs/video/player.css
+!/docs/video/player.js
+!/docs/assets/video-guide-de.svg
+!/docs/video/dialcaptain-installation-de.html
+!/docs/video/dialcaptain-installation-de.mp4
+!/docs/video/dialcaptain-installation-de.vtt
+!/docs/video/dialcaptain-installation-de-poster.jpg
+!/docs/assets/video-guide-en.svg
+!/docs/video/dialcaptain-installation-en.html
+!/docs/video/dialcaptain-installation-en.mp4
+!/docs/video/dialcaptain-installation-en.vtt
+!/docs/video/dialcaptain-installation-en-poster.jpg

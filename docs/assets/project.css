@@ -237,3 +237,7 @@ code { overflow-wrap:anywhere; }
  html { scroll-behavior:auto; }
  *,*::before,*::after { transition:none!important; animation:none!important; }
 }
+
+/* Installation tutorial, added without replacing existing navigation. */
+.hero-actions .video-guide-link{grid-column:1 / -1;background:rgba(255,176,0,.065)}
+.video-guide-link span{font-size:19px;color:var(--accent)}

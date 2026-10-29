@@ -1,0 +1,913 @@
+WEBVTT
+
+00:00:00.638 --> 00:00:04.975
+Welcome to Dial Captain This guide takes you through installation
+
+00:00:04.888 --> 00:00:08.288
+and setup one step at a time We will connect
+
+00:00:08.200 --> 00:00:11.538
+the small controller to Wi-Fi pair a Philips Hue Tap
+
+00:00:11.450 --> 00:00:15.538
+Dial and configure Roon Blu OS or WiiM You do
+
+00:00:15.450 --> 00:00:19.288
+not need programming knowledge Pause whenever you want to follow
+
+00:00:19.200 --> 00:00:22.375
+a step at your own pace The chapters below the
+
+00:00:22.288 --> 00:00:25.038
+video let you jump straight to the mode you want
+
+00:00:26.971 --> 00:00:30.421
+The Tap Dial sends button presses and dial movements to
+
+00:00:30.333 --> 00:00:35.108
+the ESP over Zigbee The ESP translates them into Wi-Fi
+
+00:00:35.021 --> 00:00:38.833
+control commands Exactly one mode is active at a time
+
+00:00:39.108 --> 00:00:43.233
+Roon Blu OS or WiiM Settings for the other modes
+
+00:00:43.146 --> 00:00:47.096
+are retained Dial Captain does not stream music or act
+
+00:00:47.008 --> 00:00:49.883
+as a speaker You do not need a Hue Bridge
+
+00:00:50.046 --> 00:00:54.171
+Roon Pilot or an additional computer service Roon mode still
+
+00:00:54.083 --> 00:00:56.296
+requires your existing Roon Server
+
+00:00:58.221 --> 00:01:02.596
+Prepare an ESP32 C6 Zero with eight megabytes of flash
+
+00:01:02.821 --> 00:01:07.121
+a Philips Hue Tap Dial model RDM002 and a USB
+
+00:01:07.033 --> 00:01:12.496
+data cable Check the exact board name A similar-looking ESP32
+
+00:01:12.408 --> 00:01:16.196
+S3 is not the same device The Tap Dial runs
+
+00:01:16.108 --> 00:01:21.308
+on its battery The ESP however needs continuous USB power
+
+00:01:21.608 --> 00:01:24.058
+You will also need the name and password of your
+
+00:01:23.971 --> 00:01:29.733
+2.4 gigahertz Wi-Fi network A charge-only USB cable cannot transfer
+
+00:01:29.646 --> 00:01:30.371
+firmware
+
+00:01:32.267 --> 00:01:36.292
+Open Chrome or Edge on your computer This guide uses
+
+00:01:36.204 --> 00:01:39.804
+the tested USB workflow in those browsers it does not
+
+00:01:39.717 --> 00:01:43.792
+cover installation on a phone Close serial monitors and other
+
+00:01:43.704 --> 00:01:48.817
+browser tabs already using the ESP Your computer ESP and
+
+00:01:48.729 --> 00:01:50.992
+player must be able to reach each other on the
+
+00:01:50.904 --> 00:01:56.392
+home network An isolated guest network is unsuitable Later you
+
+00:01:56.304 --> 00:01:59.392
+can open the device configuration from a phone on that
+
+00:01:59.304 --> 00:02:00.067
+network
+
+00:02:01.987 --> 00:02:06.000
+A factory-new ESP has nothing to back up If Dial
+
+00:02:05.912 --> 00:02:09.662
+Captain is already configured first export its settings from the
+
+00:02:09.575 --> 00:02:14.462
+device webpage or USB assistant A complete erase also removes
+
+00:02:14.375 --> 00:02:19.212
+Wi-Fi button assignments and Tap Dial pairing The backup belongs
+
+00:02:19.125 --> 00:02:23.725
+to that particular ESP and contains private credentials Keep it
+
+00:02:23.638 --> 00:02:28.225
+on your computer We will cover restoration later A firmware
+
+00:02:28.138 --> 00:02:31.187
+update is no reason to reset the Tap Dial as
+
+00:02:31.100 --> 00:02:32.000
+a precaution
+
+00:02:33.917 --> 00:02:37.867
+Start on the Dial Captain project website hosted on GitHub
+
+00:02:38.167 --> 00:02:41.854
+It provides the guide and the entry for USB installation
+
+00:02:42.154 --> 00:02:45.217
+At the time of this video a public firmware release
+
+00:02:45.129 --> 00:02:48.854
+and online installer have not yet been approved The following
+
+00:02:48.767 --> 00:02:52.542
+recordings show the existing local development installer so you can
+
+00:02:52.454 --> 00:02:56.304
+learn the workflow A status page is not an installation
+
+00:02:56.217 --> 00:03:00.304
+error Once the public installer is released start from the
+
+00:03:00.217 --> 00:03:04.504
+project page This video does not publish firmware itself
+
+00:03:06.392 --> 00:03:10.967
+Connect only the intended ESP32 C6 to your computer by
+
+00:03:10.879 --> 00:03:15.979
+USB Temporarily disconnect other ESP boards from the computer to
+
+00:03:15.892 --> 00:03:19.467
+avoid selecting the wrong one If you have trouble use
+
+00:03:19.379 --> 00:03:22.904
+a direct USB port rather than a hub Locate the
+
+00:03:22.817 --> 00:03:26.767
+small BOOT and RESET buttons on your board Their positions
+
+00:03:26.679 --> 00:03:30.804
+can vary between board versions The illustration explains their
+
+00:03:30.717 --> 00:03:33.467
+functions and is not a scale drawing of the board
+
+00:03:33.379 --> 00:03:34.092
+layout
+
+00:03:36.012 --> 00:03:40.412
+The first installation may require manual download mode Leave the
+
+00:03:40.325 --> 00:03:45.950
+ESP connected by USB Hold BOOT While holding it briefly
+
+00:03:45.862 --> 00:03:50.662
+press and release RESET Then release BOOT Open the browser
+
+00:03:50.575 --> 00:03:55.038
+USB selection again Do not press either button while firmware
+
+00:03:54.950 --> 00:03:58.938
+is being written Unlike the round Roon Pilot this separate
+
+00:03:58.850 --> 00:04:02.475
+C6 board does not select a second processor by reversing
+
+00:04:02.388 --> 00:04:03.725
+the USB connector
+
+00:04:05.654 --> 00:04:10.117
+In the local installer select Install or update firmware The
+
+00:04:10.029 --> 00:04:14.529
+browser opens its own device picker Click the connected ESP
+
+00:04:14.442 --> 00:04:18.767
+and then Connect It is often called USB JTAG or
+
+00:04:18.679 --> 00:04:22.517
+Serial Debug Unit On Windows it may include a COM
+
+00:04:22.429 --> 00:04:25.942
+number On macOS the name looks different and there is
+
+00:04:25.854 --> 00:04:29.492
+no Windows COM number Names and numbers in this video
+
+00:04:29.404 --> 00:04:33.729
+are examples If unsure cancel and unplug the board to
+
+00:04:33.642 --> 00:04:35.292
+see which entry disappears
+
+00:04:37.221 --> 00:04:42.446
+After USB access is granted the installation dialog appears Choose
+
+00:04:42.358 --> 00:04:46.721
+Install Dial Captain The name and displayed version must match
+
+00:04:46.633 --> 00:04:51.683
+your intended device The installer is configured for the ESP32
+
+00:04:51.596 --> 00:04:55.171
+C6 If another chip is reported or the board is
+
+00:04:55.083 --> 00:04:59.933
+unsupported do not install unrelated firmware Close the dialog and
+
+00:04:59.846 --> 00:05:04.271
+check the board cable and selected USB port first These
+
+00:05:04.183 --> 00:05:08.033
+installer dialogs may use English labels even when the surrounding
+
+00:05:07.946 --> 00:05:09.071
+page is German
+
+00:05:11.000 --> 00:05:15.750
+For a clean installation select Erase device then Next This
+
+00:05:15.662 --> 00:05:20.100
+removes existing data on the ESP including saved Wi-Fi and
+
+00:05:20.012 --> 00:05:23.400
+Tap Dial pairing data On a new board it gives
+
+00:05:23.312 --> 00:05:27.238
+you a clean starting point On an existing device make
+
+00:05:27.150 --> 00:05:30.938
+sure you already have your backup file An appropriate update
+
+00:05:30.850 --> 00:05:34.013
+without erasing can retain settings but that is not a
+
+00:05:33.925 --> 00:05:37.700
+blanket guarantee for every firmware version and storage layout
+
+00:05:39.612 --> 00:05:43.550
+Read the final confirmation Check once more that you intend
+
+00:05:43.462 --> 00:05:47.538
+to install Dial Captain on the correct C6 board Only
+
+00:05:47.450 --> 00:05:52.412
+then click Install Keep the USB cable connected throughout Do
+
+00:05:52.325 --> 00:05:55.562
+not close the browser window or let the computer sleep
+
+00:05:55.862 --> 00:05:59.213
+The progress shown in the video is shortened You do
+
+00:05:59.125 --> 00:06:03.150
+not need to select individual files enter memory addresses or
+
+00:06:03.062 --> 00:06:05.138
+install a development environment
+
+00:06:07.096 --> 00:06:11.221
+The installer prepares the board erases storage if requested and
+
+00:06:11.133 --> 00:06:14.733
+writes the firmware The percentage can pause for a while
+
+00:06:15.033 --> 00:06:19.196
+Wait for the explicit completion message Reaching one hundred
+
+00:06:19.108 --> 00:06:22.408
+percent alone is not a reason to unplug If the
+
+00:06:22.321 --> 00:06:26.471
+browser reports an error record its exact text Check the
+
+00:06:26.383 --> 00:06:30.958
+cable direct USB connection and download mode before trying again
+
+00:06:31.233 --> 00:06:34.658
+A video animation is of course not proof of a
+
+00:06:34.571 --> 00:06:36.096
+physical flashing test
+
+00:06:37.988 --> 00:06:42.588
+After successful completion close the installation dialog This
+
+00:06:42.500 --> 00:06:46.450
+releases the USB port for the next step BOOT must
+
+00:06:46.362 --> 00:06:49.988
+now be released If the board remains in download mode
+
+00:06:50.188 --> 00:06:54.188
+briefly press RESET without holding BOOT Wait a moment for
+
+00:06:54.100 --> 00:06:58.188
+the new firmware to start The USB entry may disappear
+
+00:06:58.100 --> 00:07:01.988
+briefly and return You do not need a separate application
+
+00:07:01.900 --> 00:07:03.812
+to configure Wi-Fi first
+
+00:07:05.683 --> 00:07:10.308
+Below the installer click Start setup Select the same ESP
+
+00:07:10.221 --> 00:07:14.308
+again in the USB picker and confirm This is intentional
+
+00:07:14.508 --> 00:07:17.508
+the installer used the port first and now the setup
+
+00:07:17.421 --> 00:07:20.708
+assistant talks to the running firmware If the port is
+
+00:07:20.621 --> 00:07:24.308
+busy check whether the old installation dialog or a serial
+
+00:07:24.221 --> 00:07:28.021
+monitor is still open The ESP does not need Wi-Fi
+
+00:07:27.933 --> 00:07:30.583
+yet and you do not need to select a special
+
+00:07:30.496 --> 00:07:32.358
+setup network on your computer
+
+00:07:34.304 --> 00:07:38.092
+You now have two choices For the first setup choose
+
+00:07:38.004 --> 00:07:40.704
+Set up as new If you have a backup from
+
+00:07:40.617 --> 00:07:44.729
+this exact ESP you can instead choose Restore backup even
+
+00:07:44.642 --> 00:07:48.617
+before Wi-Fi is configured We will follow new setup first
+
+00:07:48.529 --> 00:07:52.117
+and cover restoration in its own chapter A backup from
+
+00:07:52.029 --> 00:07:54.742
+another ESP is not a way to clone a second
+
+00:07:54.654 --> 00:07:57.767
+controller or pair one Tap Dial to two devices at
+
+00:07:57.679 --> 00:07:58.617
+the same time
+
+00:08:00.554 --> 00:08:03.829
+The assistant searches for Wi-Fi networks within range of the
+
+00:08:03.742 --> 00:08:07.542
+ESP Open the list and choose your own 2.4 gigahertz
+
+00:08:07.454 --> 00:08:11.129
+network Do not confuse it with a neighbour’s similar name
+
+00:08:11.042 --> 00:08:15.117
+or an isolated guest network If yours is missing scan
+
+00:08:15.029 --> 00:08:19.217
+again or enter its exact name manually Your computer stays
+
+00:08:19.129 --> 00:08:23.092
+on its normal home network Dial Captain does not create
+
+00:08:23.004 --> 00:08:26.742
+a setup hotspot for this workflow The details are sent
+
+00:08:26.654 --> 00:08:29.429
+directly to the ESP over USB
+
+00:08:31.321 --> 00:08:36.433
+Enter your Wi-Fi password This video uses fictional example details
+
+00:08:36.346 --> 00:08:40.371
+only If needed use Show to check for typing mistakes
+
+00:08:40.533 --> 00:08:44.771
+then hide the password again Select Test connection and save
+
+00:08:45.046 --> 00:08:49.358
+New credentials are saved only after a successful connection If
+
+00:08:49.271 --> 00:08:53.758
+the test fails check the name password and 2.4 gigahertz
+
+00:08:53.671 --> 00:08:58.196
+network An unsuccessful attempt does not replace previously saved
+
+00:08:58.108 --> 00:08:59.058
+credentials
+
+00:09:01.012 --> 00:09:04.375
+Once Wi-Fi is connected you can choose a Roon Server
+
+00:09:04.288 --> 00:09:08.512
+or open the device webpage directly Blu OS and WiiM
+
+00:09:08.425 --> 00:09:11.288
+need no approval in Roon so you can skip server
+
+00:09:11.200 --> 00:09:15.675
+selection Note the device address shown by the assistant Your
+
+00:09:15.588 --> 00:09:18.925
+router assigns it and yours will differ from the video
+
+00:09:18.838 --> 00:09:24.113
+example The address 192 dot 168 dot 4 dot 1
+
+00:09:24.025 --> 00:09:26.650
+used in some other device guides is not used for
+
+00:09:26.562 --> 00:09:27.912
+this USB setup
+
+00:09:29.821 --> 00:09:34.533
+In the assistant choose Enable web configuration Once the service
+
+00:09:34.446 --> 00:09:39.246
+is ready Open web configuration appears Click it The new
+
+00:09:39.158 --> 00:09:42.571
+tab shows a webpage served by the ESP not a
+
+00:09:42.483 --> 00:09:46.858
+cloud configuration service Your computer or phone must be able
+
+00:09:46.771 --> 00:09:50.133
+to reach that ESP on the home network While the
+
+00:09:50.046 --> 00:09:53.858
+web server is active the board’s RGB LED gently blinks
+
+00:09:53.771 --> 00:09:57.683
+amber This works even before any Tap Dial is paired
+
+00:09:57.596 --> 00:09:59.533
+or any Roon Server selected
+
+00:10:01.458 --> 00:10:05.158
+Find the Pair Philips Hue Tap Dial section A new
+
+00:10:05.071 --> 00:10:09.283
+device has no controller assigned yet Click Pair your first
+
+00:10:09.196 --> 00:10:13.796
+Tap Dial Discovery is now open for three minutes Place
+
+00:10:13.708 --> 00:10:17.346
+the intended Tap Dial near the ESP You do not
+
+00:10:17.258 --> 00:10:20.071
+need a Hue Bridge or an already paired controller for
+
+00:10:19.983 --> 00:10:24.546
+this Simply powering the ESP does not leave pairing permanently
+
+00:10:24.458 --> 00:10:27.821
+open You deliberately start discovery here
+
+00:10:29.762 --> 00:10:32.425
+On a new Tap Dial hold the button marked with
+
+00:10:32.338 --> 00:10:35.575
+one dot for about three seconds until its LED blinks
+
+00:10:35.875 --> 00:10:39.462
+The browser should progress from Searching to Checking and Setting
+
+00:10:39.375 --> 00:10:43.613
+up During setup briefly press a button occasionally to keep
+
+00:10:43.525 --> 00:10:47.838
+the battery-powered controller awake These presses do not send music
+
+00:10:47.750 --> 00:10:51.562
+commands while pairing is in progress If your Tap Dial
+
+00:10:51.475 --> 00:10:55.088
+already belongs to a Hue Bridge or another ESP follow
+
+00:10:55.000 --> 00:10:56.338
+the next step first
+
+00:10:58.262 --> 00:11:01.625
+A Tap Dial can belong to only one Zigbee network
+
+00:11:01.925 --> 00:11:04.200
+If it was paired with a Hue Bridge or another
+
+00:11:04.112 --> 00:11:08.325
+ESP reset that controller only hold SETUP on its back
+
+00:11:08.238 --> 00:11:11.988
+for more than ten seconds This removes its old pairing
+
+00:11:12.288 --> 00:11:16.625
+Then with discovery open use button one again Do not
+
+00:11:16.538 --> 00:11:21.300
+factory-reset the ESP for this When restoring a suitable backup
+
+00:11:21.212 --> 00:11:24.562
+to the same ESP resetting the controller is not the
+
+00:11:24.475 --> 00:11:25.562
+normal procedure
+
+00:11:27.512 --> 00:11:30.800
+Wait until the page says Done Only then is the
+
+00:11:30.712 --> 00:11:35.512
+assignment saved The progress states shown demonstrate the interface
+
+00:11:35.800 --> 00:11:38.850
+Full first pairing of a new controller has not yet
+
+00:11:38.762 --> 00:11:43.075
+completed physical acceptance in this development version Use Set up
+
+00:11:42.988 --> 00:11:47.275
+again for the existing controller A different Tap Dial replaces
+
+00:11:47.188 --> 00:11:52.288
+it only after successful confirmed setup Cancelling or timing out
+
+00:11:52.200 --> 00:11:55.962
+does not delete the previous assignment Check the battery and
+
+00:11:55.875 --> 00:11:58.788
+keep the controller awake before resetting anything
+
+00:12:00.708 --> 00:12:04.696
+Under Mode choose what the Tap Dial should control Roon
+
+00:12:04.608 --> 00:12:08.633
+controls a zone on your Roon Server Blu OS controls
+
+00:12:08.546 --> 00:12:13.083
+a Blu OS player directly WiiM controls a WiiM directly
+
+00:12:12.996 --> 00:12:16.521
+through its local interface Only one mode runs at a
+
+00:12:16.433 --> 00:12:20.533
+time Saving activates your choice without deleting the other
+
+00:12:20.446 --> 00:12:25.121
+profiles The next chapters cover all three paths You only
+
+00:12:25.033 --> 00:12:27.733
+need to configure the one you intend to use now
+
+00:12:29.667 --> 00:12:33.154
+For Roon select Roon mode on the device webpage and
+
+00:12:33.067 --> 00:12:38.242
+save In the USB assistant open Roon Server selection Choose
+
+00:12:38.154 --> 00:12:41.392
+your running server from the list and save it If
+
+00:12:41.304 --> 00:12:44.729
+discovery is empty first check that the server is running
+
+00:12:44.642 --> 00:12:48.917
+and reachable on your network Alternatively check its address with
+
+00:12:48.829 --> 00:12:54.029
+the usual API port 9330 Avoid selecting a second server
+
+00:12:53.942 --> 00:12:57.717
+by mistake A different server needs its own approval and
+
+00:12:57.629 --> 00:12:58.992
+a new zone selection
+
+00:13:00.904 --> 00:13:06.242
+Now open Roon then Settings and Extensions Find Dial Captain
+
+00:13:06.154 --> 00:13:11.092
+and click Enable Next open the extension’s settings cog This
+
+00:13:11.004 --> 00:13:15.104
+schematic view explains the path the exact arrangement can vary
+
+00:13:15.017 --> 00:13:18.617
+with your Roon version Use Check connection in the USB
+
+00:13:18.529 --> 00:13:22.879
+assistant to see whether approval has arrived Configure Roon volume
+
+00:13:22.792 --> 00:13:25.829
+and buttons in that settings cog rather than on the
+
+00:13:25.742 --> 00:13:27.304
+general device webpage
+
+00:13:29.183 --> 00:13:33.271
+Choose your Roon zone Set the extension language to German
+
+00:13:33.183 --> 00:13:36.158
+or English as needed it is independent of the Roon
+
+00:13:36.071 --> 00:13:40.746
+app language Sensitivity and Steps per click are separate settings
+
+00:13:41.046 --> 00:13:44.533
+You can select one to four native Roon steps With
+
+00:13:44.446 --> 00:13:47.933
+an output using half a decibel per step two steps
+
+00:13:47.846 --> 00:13:51.058
+give one decibel per click Each of the four buttons
+
+00:13:50.971 --> 00:13:53.783
+can have a short and long action such as play
+
+00:13:53.908 --> 00:13:56.658
+pause next previous or mute
+
+00:13:58.583 --> 00:14:02.108
+For each of the three favourites first choose Roon playlist
+
+00:14:02.021 --> 00:14:05.096
+or Roon radio station then select an item from the
+
+00:14:05.008 --> 00:14:09.433
+list Radio stations come from My Live Radio You can
+
+00:14:09.346 --> 00:14:13.546
+page through longer lists Assign the favourites to buttons and
+
+00:14:13.458 --> 00:14:17.833
+save everything At low listening volume test one button press
+
+00:14:17.746 --> 00:14:21.296
+and a small dial movement first After the Tap Dial
+
+00:14:21.208 --> 00:14:24.508
+reports back its battery level can also appear in the
+
+00:14:24.421 --> 00:14:28.396
+status line A fixed Roon output may not support volume
+
+00:14:28.308 --> 00:14:29.108
+changes
+
+00:14:31.000 --> 00:14:34.312
+For a Blu OS player choose Blu OS control on
+
+00:14:34.225 --> 00:14:38.850
+the device webpage Discovery shows reachable devices with their name
+
+00:14:39.025 --> 00:14:43.500
+model and address Deliberately select your player If it is
+
+00:14:43.412 --> 00:14:47.938
+missing enter the address manually the usual port is 11000
+
+00:14:48.200 --> 00:14:51.825
+Check player and load presets confirms the target and loads
+
+00:14:51.738 --> 00:14:56.162
+its saved presets This does not start music The mode
+
+00:14:56.075 --> 00:14:59.550
+is for Blu OS generally not just one particular NODE
+
+00:14:59.462 --> 00:14:59.988
+model
+
+00:15:01.917 --> 00:15:05.679
+First save your radio stations or playlists as presets in
+
+00:15:05.592 --> 00:15:09.129
+the Blu OS app. Choose three of those as favourites
+
+00:15:09.042 --> 00:15:13.767
+here Assign short and long button actions then select sensitivity
+
+00:15:13.679 --> 00:15:17.317
+and half one or two decibels per click Save the
+
+00:15:17.229 --> 00:15:21.017
+settings With a fixed output level the ring has no
+
+00:15:20.929 --> 00:15:25.554
+effect Next and previous depend on the current source Dial
+
+00:15:25.467 --> 00:15:28.979
+Captain does not maintain its own streaming library and its
+
+00:15:28.892 --> 00:15:32.529
+volume commands do not explicitly adjust other group members
+
+00:15:34.458 --> 00:15:38.408
+For WiiM first save the desired content as presets in
+
+00:15:38.321 --> 00:15:42.596
+WiiM Home On the device webpage choose WiiM control and
+
+00:15:42.508 --> 00:15:46.796
+select the discovered player Alternatively enter its address the
+
+00:15:46.708 --> 00:15:52.733
+local HTTPS interface normally uses port 443 Check the player
+
+00:15:52.646 --> 00:15:56.083
+and load its presets Up to twelve entries can be
+
+00:15:55.996 --> 00:15:59.433
+shown Choose three as your favourites and assign them to
+
+00:15:59.346 --> 00:16:03.946
+short or long presses Supported content and track commands depend
+
+00:16:03.858 --> 00:16:05.333
+on the service and source
+
+00:16:07.262 --> 00:16:10.488
+On a new profile ring control of the WiiM’s own
+
+00:16:10.400 --> 00:16:14.100
+volume starts disabled Enable it only if that is the
+
+00:16:14.012 --> 00:16:18.162
+volume you intend to control Choose one two or five
+
+00:16:18.075 --> 00:16:22.362
+percentage points per click then save This does not directly
+
+00:16:22.275 --> 00:16:26.250
+adjust an external DAC For a Roon zone using an
+
+00:16:26.162 --> 00:16:31.087
+RME volume provider use Roon mode The output configuration in
+
+00:16:31.000 --> 00:16:35.500
+WiiM Home is not changed automatically Also note that WiiM
+
+00:16:35.412 --> 00:16:38.550
+mute commands can affect members of an existing group
+
+00:16:40.471 --> 00:16:44.071
+In daily use the web server is normally closed By
+
+00:16:43.983 --> 00:16:47.308
+default hold Tap Dial button four for at least eight
+
+00:16:47.221 --> 00:16:52.133
+seconds then release The amber LED indicates that configuration is
+
+00:16:52.046 --> 00:16:56.208
+available The same extra-long press closes it again without
+
+00:16:56.121 --> 00:17:00.296
+triggering an ordinary button action Alternatively hold BOOT on the
+
+00:17:00.208 --> 00:17:04.496
+running ESP for three seconds without pressing RESET or open
+
+00:17:04.408 --> 00:17:09.421
+access over USB After ten minutes without interaction the webpage
+
+00:17:09.333 --> 00:17:15.146
+closes Extend gives you another ten minutes Audio control continues
+
+00:17:17.058 --> 00:17:21.796
+Open Backup and restore then choose Export settings Your browser
+
+00:17:21.708 --> 00:17:25.771
+saves a JSON file on your computer It includes Wi-Fi
+
+00:17:25.883 --> 00:17:29.708
+Roon approval and zone buttons and favourites all Blu OS
+
+00:17:29.621 --> 00:17:33.096
+and WiiM profiles plus Tap Dial and Zigbee data for
+
+00:17:33.008 --> 00:17:36.921
+the same ESP Unsaved form edits are not exported No
+
+00:17:36.833 --> 00:17:41.083
+extra password or cloud account is required Because the file
+
+00:17:40.996 --> 00:17:44.946
+contains credentials do not attach it to public bug reports
+
+00:17:45.208 --> 00:17:48.833
+Export it before a complete USB reinstallation
+
+00:17:50.762 --> 00:17:55.562
+After reinstalling close the installer start USB setup and choose
+
+00:17:55.475 --> 00:17:59.688
+Restore backup Use the file from this exact ESP Check
+
+00:17:59.600 --> 00:18:04.050
+the summary Explicit confirmation and preparation save the restore
+
+00:18:03.962 --> 00:18:09.275
+request Then choose Restart now and keep power connected Reconnect
+
+00:18:09.188 --> 00:18:14.050
+USB afterwards if needed Full restoration after a real factory
+
+00:18:13.962 --> 00:18:17.938
+flash has not yet completed physical acceptance in this development
+
+00:18:17.850 --> 00:18:22.050
+version The film explains the workflow available in the assistant
+
+00:18:22.262 --> 00:18:24.225
+rather than claiming release approval
+
+00:18:26.125 --> 00:18:29.925
+After setup you no longer need the computer Power the
+
+00:18:29.838 --> 00:18:33.550
+ESP from a suitable USB supply and leave it connected
+
+00:18:33.462 --> 00:18:37.362
+to Wi-Fi The Tap Dial continues to use its battery
+
+00:18:37.650 --> 00:18:40.925
+Roon still needs a running Roon Server Blu OS and
+
+00:18:40.838 --> 00:18:45.262
+WiiM are controlled directly A closed configuration webpage is
+
+00:18:45.175 --> 00:18:48.500
+normal and does not mean the controller is offline There
+
+00:18:48.412 --> 00:18:53.700
+is no dedicated over-the-air updater Future firmware updates use USB
+
+00:18:53.612 --> 00:18:55.812
+again so keep your backup file
+
+00:18:57.750 --> 00:19:02.275
+No USB device check the data cable direct port closed
+
+00:19:02.188 --> 00:19:06.488
+monitors and BOOT with RESET No Wi-Fi check the name
+
+00:19:06.625 --> 00:19:12.038
+password and 2.4 gigahertz network No device webpage enable the
+
+00:19:11.950 --> 00:19:15.875
+temporary server first and use the actual IP address No
+
+00:19:15.788 --> 00:19:19.875
+music control check the active mode player or Roon zone
+
+00:19:19.962 --> 00:19:24.425
+and saved buttons No volume control check for fixed output
+
+00:19:24.338 --> 00:19:28.188
+and the WiiM ring option Record the version step and
+
+00:19:28.100 --> 00:19:32.362
+exact message when reporting a fault Factory reset is not
+
+00:19:32.275 --> 00:19:34.087
+the first troubleshooting step
+
+00:19:36.012 --> 00:19:40.438
+That completes the Dial Captain installation and setup guide You
+
+00:19:40.350 --> 00:19:44.012
+now know how USB selection and download mode work how
+
+00:19:43.925 --> 00:19:47.100
+to configure Wi-Fi pair the Tap Dial and choose your
+
+00:19:47.012 --> 00:19:51.625
+audio control mode Use the chapters to revisit individual steps
+
+00:19:51.925 --> 00:19:55.125
+The large project-page button below the video leads to the
+
+00:19:55.038 --> 00:19:59.250
+current guide and release status Enjoy using your own music
+
+00:19:59.162 --> 00:19:59.938
+controller

@@ -10,6 +10,9 @@
 
 **[Project page](https://mermayer.github.io/DialCaptain/)** · **[Complete guide](https://mermayer.github.io/DialCaptain/guide/)** · **[Enclosure & STL files](https://mermayer.github.io/DialCaptain/#enclosure)**
 
+
+<a href="https://mermayer.github.io/DialCaptain/video/dialcaptain-installation-en.html"><img src="docs/assets/video-guide-en.svg" alt="Watch the installation video – English" width="330"></a>
+
 </div>
 
 DialCaptain connects a **Philips Hue Tap Dial RDM002** to an

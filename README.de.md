@@ -2,7 +2,8 @@
 
 # DialCaptain
 
-### Dein Drehring für Roon, BluOS und WiiM
+
+### Dein Drehring für Roon, BluOS, WiiM und Infrarot
 
 <img src="docs/assets/tap-dial.webp" alt="Philips Hue Tap Dial" width="300">
 
@@ -26,6 +27,9 @@ die Einstellungen der anderen bleiben erhalten.
   Presets den Tasten zuordnen.
 - **WiiM:** Player und WiiM-Home-Presets wählen; die eigene WiiM-Lautstärke kann
   ausdrücklich für den Ring aktiviert werden.
+- **Infrarot:** Zehn Befehle der Originalfernbedienung lernen und Drehring sowie kurze/lange Tasten zuordnen. Benötigt optionale IR-Module direkt am ESP.
+
+**IR im Entwicklungsstand 0.3.0-dev.2:** Zehn Lernplätze, Drehring und kurze/lange Tasten mit optionalen IR-Modulen direkt am ESP. [Anschlüsse und IR-Anleitung](https://mermayer.github.io/DialCaptain/de/guide/#infrared). Die Softwareprüfungen sind abgeschlossen; der Test mit echten IR-Modulen steht noch aus. Das aktuelle lokale USB-Paket führt eine Neuinstallation aus. Aktuelle Sicherungen verwenden Format 2.
 
 **Lange Batterielaufzeit:** Philips Hue nennt für den Tap Dial mit einer CR2032
 **mindestens zwei Jahre**. Das ist eine [Herstellerangabe](https://www.philips-hue.com/de-de/p/hue-tap-dial-switch/8719514440999);
@@ -43,7 +47,7 @@ DialCaptain überträgt Steuerbefehle und spielt selbst keine Musik ab.
 ## Einrichtung
 
 Die vollständige Anleitung erklärt die USB-Installation, WLAN-Einrichtung,
-Roon-Serverwahl, Erstkopplung des Tap Dial, die drei Betriebsarten sowie
+Roon-Serverwahl, Erstkopplung des Tap Dial, die vier Betriebsarten sowie
 Dateisicherung und Wiederherstellung. Die Webkonfiguration wird bei Bedarf
 aktiviert: standardmäßig Taste 4 acht Sekunden halten und loslassen,
 alternativ BOOT am laufenden ESP drei Sekunden halten. Bernsteinfarbenes
@@ -60,7 +64,7 @@ Presets – und welcher Zugriff nötig ist, hängt von der jeweiligen API ab.
 
 Für jedes weitere System muss eine passende Anbindung umgesetzt und am Gerät
 getestet werden. Dafür fehlen derzeit vor allem geeignete Testgeräte.
-**Aktuell verfügbar sind Roon, BluOS und WiiM.** Die Erweiterbarkeit bedeutet
+**Aktuell verfügbar sind Roon, BluOS, WiiM und Infrarot.** Die Erweiterbarkeit bedeutet
 keine bereits vorhandene Unterstützung beliebiger Netzwerkgeräte.
 
 ## Stand der Projektseiten

@@ -2,7 +2,8 @@
 
 # DialCaptain
 
-### A real dial for Roon, BluOS and WiiM
+
+### A real dial for Roon, BluOS, WiiM and infrared
 
 <img src="docs/assets/tap-dial.webp" alt="Philips Hue Tap Dial" width="300">
 
@@ -25,6 +26,9 @@ the other profiles keep their settings.
 - **BluOS:** choose a network player, control playback and assign its stored presets.
 - **WiiM:** choose your player and WiiM Home presets; explicitly enable its
   own volume control if you want to use the ring.
+- **Infrared:** Learn ten original-remote commands and assign the ring and short/long buttons. Requires optional IR modules directly on the ESP.
+
+**IR in development preview 0.3.0-dev.2:** Ten learned commands, dial and short/long buttons using optional IR modules directly on the ESP. [Wiring and IR guide](https://mermayer.github.io/DialCaptain/guide/#infrared). Software checks passed; real IR module testing remains open. The current local USB package performs a clean installation. Current backups use format 2.
 
 **Long battery life:** Philips Hue specifies **at least two years** for the
 Tap Dial’s CR2032 battery. This is a [manufacturer specification](https://www.philips-hue.com/en-gb/p/hue-tap-dial-switch/8719514440999);
@@ -42,7 +46,7 @@ DialCaptain sends control commands and does not play audio itself.
 ## Setup
 
 The complete guide explains USB installation, Wi-Fi, Roon Server selection,
-first Tap Dial pairing, the three control modes and file backup/restoration.
+first Tap Dial pairing, the four control modes and file backup/restoration.
 Activate web configuration when needed: by default, hold button 4 for eight
 seconds and release, or hold BOOT on the running ESP for three seconds.
 Amber blinking indicates an active web server. It closes after ten minutes
@@ -58,7 +62,7 @@ access requirements.
 
 Each additional system needs an integration to be implemented and tested on
 the device. Suitable test devices are currently the main missing resource.
-**Roon, BluOS and WiiM are available today.** Extensibility does not mean that
+**Roon, BluOS, WiiM and infrared are available today.** Extensibility does not mean that
 arbitrary network devices are already supported.
 
 ## Project-page status

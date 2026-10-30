@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#07090a"><meta name="robots" content="noindex,nofollow"><meta name="description" content="USB installation, Wi-Fi, first pairing, Roon, BluOS, WiiM and backup restoration."><title>DialCaptain — Complete setup guide</title><link rel="icon" href="../assets/favicon.svg"><link rel="stylesheet" href="../assets/foundation.css"><link rel="stylesheet" href="../assets/project.css?v=power-benefits-1"><script src="../assets/navigation.js" defer></script><script src="../assets/project.js" defer></script></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#07090a"><meta name="robots" content="noindex,nofollow"><meta name="description" content="USB installation, Wi-Fi, first pairing, Roon, BluOS, WiiM, infrared and backup restoration."><title>DialCaptain — Complete setup guide</title><link rel="icon" href="../assets/favicon.svg"><link rel="stylesheet" href="../assets/foundation.css"><link rel="stylesheet" href="../assets/project.css?v=dc-0302"><script src="../assets/navigation.js" defer></script><script src="../assets/project.js" defer></script></head>
 <body class="project-page guide-page"><a class="skip-link" href="#main">Skip to content</a><svg class="icon-sprite" aria-hidden="true"><symbol id="i-usb" viewBox="0 0 24 24"><path d="M12 3v15M9 6l3-3 3 3M12 11l-5 4H4M12 14l5 4h3"/><circle cx="4" cy="15" r="1"/><rect x="19" y="17" width="2" height="2"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5v16M12 5C8 2 4 3 3 4v15c3-1 6-1 9 2 3-3 6-3 9-2V4c-1-1-5-2-9 1Z"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 19v2h16v-2"/></symbol><symbol id="i-github" viewBox="0 0 24 24"><path d="M9 21v-4c-4 1-4-2-6-2M15 21v-4c0-1-.5-2-1-2 4-.5 6-2 6-6 0-1-.5-3-1-3 .5-1 .5-3 0-3-2 0-3 1-4 1-2-.5-4-.5-6 0-1 0-2-1-4-1-.5 0-.5 2 0 3-.5 0-1 2-1 3 0 4 2 5.5 6 6-.5 0-1 1-1 2"/></symbol></svg>
 <header class="site-header">
 <div class="header-inner"><a class="brand" href="../" aria-label="DialCaptain"><img src="../assets/favicon.svg" alt="" width="30" height="30"><span>Dial<em>Captain</em></span></a>
@@ -13,7 +13,7 @@
 <div class="header-actions"><a class="language-link" href="../de/guide/" lang="de">Deutsch</a><a class="header-link" href="https://github.com/mermayer/DialCaptain" aria-label="GitHub home"><svg aria-hidden="true"><use href="#i-github"></use></svg><span>GitHub home</span></a>
 <details class="mobile-menu">
 <summary>Menu</summary>
-<div class="mobile-links"><a href="#ready">Before you start</a><a href="#usb">Install over USB</a><a href="#wifi">Wi-Fi & server</a><a href="#pair">Pair the Tap Dial</a><a href="#roon">Roon control</a><a href="#bluos">BluOS control</a><a href="#wiim">WiiM control</a><a href="#web">Web configuration</a><a href="#backup">Backup & updates</a><a href="#support">Troubleshooting</a>
+<div class="mobile-links"><a href="#ready">Before you start</a><a href="#usb">Install over USB</a><a href="#wifi">Wi-Fi & server</a><a href="#pair">Pair the Tap Dial</a><a href="#roon">Roon control</a><a href="#bluos">BluOS control</a><a href="#wiim">WiiM control</a><a href="#infrared">Infrared control</a><a href="#web">Web configuration</a><a href="#backup">Backup & updates</a><a href="#support">Troubleshooting</a>
 </div>
 </details>
 </div>
@@ -25,13 +25,13 @@
 <div class="breadcrumbs"><a class="button secondary" href="../" ><svg aria-hidden="true"><use href="#i-arrow"></use></svg>Project overview</a><a class="button secondary" href="https://github.com/mermayer/DialCaptain" ><svg aria-hidden="true"><use href="#i-github"></use></svg>GitHub home</a>
 </div>
 <h1>Your start with DialCaptain.</h1>
-<p>From your first USB connection to your own button mappings. Step by step for Roon, BluOS and WiiM.</p>
+<p>From your first USB connection to your own button mappings. Step by step for Roon, BluOS, WiiM and infrared.</p>
 <div class="actions"><a class="button secondary video-guide-link" href="../video/dialcaptain-installation-en.html"><span aria-hidden="true">▶</span>Watch the installation video</a></div>
 <aside class="project-support" aria-label="Support DialCaptain"><p>An entirely optional thank you for the work on DialCaptain.</p><div class="support-links support-links-prominent"><a class="button" href="https://buy.stripe.com/6oU3cw0eV0hC5nbdlX2Fa00"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 8h13v9a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4ZM17 9h2a3 3 0 0 1 0 6h-2M7 3v2m4-3v3m4-2v2"/></svg>Send Me a Coffee</a><a class="button" href="https://buymeacoffee.com/mermayer"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 8h13v9a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4ZM17 9h2a3 3 0 0 1 0 6h-2M7 3v2m4-3v3m4-2v2"/></svg>Buy Me a Coffee</a></div></aside>
 </div>
 <div class="guide-layout">
 <aside class="guide-nav" aria-label="Table of contents">
-<h2>On this page</h2><a href="#ready">Before you start</a><a href="#usb">Install over USB</a><a href="#wifi">Wi-Fi & server</a><a href="#pair">Pair the Tap Dial</a><a href="#roon">Roon control</a><a href="#bluos">BluOS control</a><a href="#wiim">WiiM control</a><a href="#web">Web configuration</a><a href="#backup">Backup & updates</a><a href="#support">Troubleshooting</a>
+<h2>On this page</h2><a href="#ready">Before you start</a><a href="#usb">Install over USB</a><a href="#wifi">Wi-Fi & server</a><a href="#pair">Pair the Tap Dial</a><a href="#roon">Roon control</a><a href="#bluos">BluOS control</a><a href="#wiim">WiiM control</a><a href="#infrared">Infrared control</a><a href="#web">Web configuration</a><a href="#backup">Backup & updates</a><a href="#support">Troubleshooting</a>
 </aside>
 <article class="guide-article">
 <section id="ready">
@@ -45,22 +45,22 @@
 </ul>
 <p class="media-caption">The <a class="inline-link" href="https://www.philips-hue.com/en-gb/p/hue-tap-dial-switch/8719514440999">battery-life figure is a manufacturer specification for the Tap Dial</a> and depends on use. No DialCaptain long-term measurement is available yet. The ESP’s actual power consumption has not been measured either.</p>
 <p>No Hue Bridge, RoonPilot, Home Assistant or extra computer service is required. A Tap Dial belongs to one Zigbee network; it cannot be paired with a Hue Bridge and DialCaptain simultaneously.</p>
-<h3>More devices and future extensions</h3><p>Network audio equipment from other manufacturers could be supported through an additional integration if its reachable REST API provides suitable commands and allows the required access. Each integration must be implemented and tested on the device; suitable test devices are currently missing. Roon, BluOS and WiiM are the modes available today. <a class="inline-link" href="../#future-integrations">Read about future extensions</a>.</p>
-<div class="notice"><strong>Development preview 0.2.0-dev.8.</strong> Existing control has been tested. Complete first pairing of a new remote and restoring after a real factory flash still need separate hardware acceptance. This preview is not a stable release.</div>
+<h3>More devices and future extensions</h3><p>Network audio equipment from other manufacturers could be supported through an additional integration if its reachable REST API provides suitable commands and allows the required access. Each integration must be implemented and tested on the device; suitable test devices are currently missing. Roon, BluOS, WiiM and optional infrared are the available control modes. <a class="inline-link" href="../#future-integrations">Read about future extensions</a>.</p>
+<div class="notice"><strong>Development preview 0.3.0-dev.2.</strong> Existing control has been tested. Complete first pairing of a new remote and restoring after a real factory flash still need separate hardware acceptance. This preview is not a stable release.</div>
 </section>
 <section id="usb">
 <h2>02 · Install over USB</h2>
 <p>The Web Installer writes firmware over USB. The same assistant then guides you through Wi-Fi, server selection or restoration. You do not need a development environment or speculative driver downloads.</p>
 <ol>
-<li><strong>Back up an existing device:</strong> If the ESP already runs DialCaptain with your settings, export a backup file first. A complete erase removes Wi-Fi, profiles and Tap Dial pairing. A factory-new ESP has nothing to back up yet.</li>
+<li><strong>Prepare for a clean installation:</strong> The current package installs firmware and storage together and removes all settings and Tap Dial pairing. Export a current format 2 backup if you want to restore it afterwards. Old format 1 backups are not imported.</li>
 <li><strong>Connect the ESP directly:</strong> Plug a USB data cable into the computer and ESP32-C6. Close serial monitors and other browser tabs that have opened this device.</li>
 <li><strong>Open the installer:</strong> Use the button below in Chrome or Edge on your computer. A hosted page needs HTTPS; the local preview on <code>localhost</code> also works. Do not open the HTML file by double-clicking it.</li>
 </ol>
 <div class="actions"><a class="button primary" href="../firmware/?lang=en" ><svg aria-hidden="true"><use href="#i-usb"></use></svg>Open USB Web Installer</a>
 </div>
 <ol start="4">
-<li>Choose <strong>“Install / update firmware”</strong>. The browser opens its USB device chooser. Select your connected ESP and click <strong>Connect</strong>. Its name is often <strong>USB JTAG/serial debug unit</strong> or similar. <code>COM…</code> on Windows and <code>cu.usbmodem…</code> on macOS are port names and may differ.</li>
-<li>Select <strong>“Install DialCaptain”</strong> in the installer. <strong>“Erase device”</strong> means a complete erase. Use it for a deliberate clean installation; first check your backup if the device is already configured. An update without erasing is only intended for a matching existing flash layout.</li>
+<li>Choose <strong>“Install firmware”</strong>. The browser opens its USB device chooser. Select your connected ESP and click <strong>Connect</strong>. Its name is often <strong>USB JTAG/serial debug unit</strong> or similar. <code>COM…</code> on Windows and <code>cu.usbmodem…</code> on macOS are port names and may differ.</li>
+<li>Select <strong>“Install DialCaptain”</strong> and confirm the clean installation. All settings are removed; firmware and the current storage layout are installed together.</li>
 <li><strong>Confirm installation and wait.</strong> Do not disconnect the cable or close the browser. Wait for the completion message, not merely a progress bar.</li>
 <li><strong>Close the installer dialog.</strong> This releases the serial connection. If the firmware does not start after flashing, release BOOT and press RESET once. Wait for the USB device to reappear.</li>
 <li>Choose <strong>“Start setup”</strong> below, select the ESP again and connect. Now choose <strong>“Set up as new”</strong> or <strong>“Restore backup”</strong>. Restoration can start immediately, before Wi-Fi has been configured.</li>
@@ -161,8 +161,22 @@
 <figcaption class=media-caption>Captured from the real device before saving.</figcaption>
 </figure>
 </section>
+<section id="infrared">
+<h2>08 · Infrared control</h2>
+<p>Connect IR modules directly to the DialCaptain ESP and use the Tap Dial like an audio remote. Learn up to ten commands, assign volume up/down to the ring and assign the four buttons' short/long presses. Other control profiles stay saved.</p>
+<div class="notice"><strong>Development preview 0.3.0-dev.2.</strong> IR learning, signal timing, backups and the browser interface are implemented and checked in software. Real-module learning, range and operation under radio load still require hardware testing.</div>
+<h3>Optional modules and wiring</h3>
+<p>Use an <strong>Adafruit 5639 High Power IR emitter</strong> and a <strong>KY-022/CHQ1838 IR receiver</strong>, as used by the RoonPilot IR Bridge. Unplug USB before wiring and check the markings on your actual modules.</p>
+<div class="table-wrap"><table><thead><tr><th>Module pin</th><th>ESP connection</th></tr></thead><tbody><tr><td>Emitter SIG</td><td>GPIO14</td></tr><tr><td>Emitter V+</td><td>5 V</td></tr><tr><td>Receiver S/OUT</td><td>GPIO0</td></tr><tr><td>Receiver +</td><td>3.3 V</td></tr><tr><td>Both GND/−</td><td>Common ESP ground</td></tr></tbody></table></div>
+<p>Viewed from the component side with USB at the bottom: GPIO14 is the third left pad from the bottom; GPIO0 is the fourth right pad. The right-hand bottom pads are 5 V, GND and 3.3 V. Keep wires short at the USB end, away from the antenna. Never apply 5 V to a GPIO. Supply ESP and emitter from stable 5 V USB power.</p>
+<p class="media-caption">Check the <a class="inline-link" href="https://docs.waveshare.com/ESP32-C6-Zero">Waveshare pinout</a>. RGB, BOOT and USB remain available.</p>
+<h3>Learn and assign commands</h3>
+<ol><li>Open temporary web configuration and choose <strong>Infrared control</strong>.</li><li>Enter a command name, such as Volume up, and choose <strong>Learn</strong>. Aim the original remote at the receiver from about 10–30 cm away.</li><li>Following the first prompt, briefly press and release the desired button. Wait for the second prompt, then briefly press the same button again. Each capture allows 15 seconds. Do not hold the button.</li><li>Matching captures are saved together. Mismatch, timeout or cancellation preserves the previous command. The board LED blinks amber during learning, then briefly green on success or red on error.</li><li><strong>Test</strong> sends one real button step. Keep the audio output low while testing. Learn volume down and any playback, input or power commands provided by your remote.</li><li>Assign commands to the ring and the four short/long button actions. Choose sensitivity and <strong>1–3 IR button steps per click</strong>. Select <strong>Save IR assignments</strong>, then <strong>Save settings</strong> below to activate the mode.</li></ol>
+<p>The IR Bridge's proven volume cadence is retained. Fast rotation uses a small fresh queue; reversing direction discards the old backlog. IR cannot provide an absolute dB reading or acknowledgement from the player. Normal IR operation needs neither Roon nor working Wi-Fi; learning uses web configuration.</p>
+<p>Defaults are 38 kHz and 33% duty. A demodulating receiver cannot measure the carrier. Change advanced settings only for a remote needing another carrier. NEC/extended NEC and suitable repeatable RAW frames are supported; changing toggle/rolling codes and very long or multi-frame appliance signals are not generally guaranteed. Learned commands and assignments are included in current backups.</p>
+</section>
 <section id="web">
-<h2>08 · Web configuration</h2>
+<h2>09 · Web configuration</h2>
 <p>The web server is only needed for configuration and normally stays closed. The ESP still retains its network address.</p>
 <div class="table-wrap">
 <table>
@@ -185,13 +199,13 @@
 <p>The device page offers German/English, mode selection, pairing and file backup. Roon’s button actions and favourites are still configured through the extension settings gear.</p>
 </section>
 <section id="backup">
-<h2>09 · Backup & updates</h2>
+<h2>10 · Backup & updates</h2>
 <h3>Export settings</h3>
 <p>Under <strong>“Back up and restore”</strong> on the device page or USB assistant choose <strong>“Export settings”</strong>. Your browser downloads a JSON file to your computer. It includes the saved state, not unsaved form edits.</p>
 <ul>
 <li>Wi-Fi credentials, active mode and web-access shortcut.</li>
 <li>Roon Server, authorization, zone, language, buttons, favourites, sensitivity and steps.</li>
-<li>Complete BluOS and WiiM profiles, including inactive modes.</li>
+<li>Complete BluOS and WiiM profiles, including inactive modes.</li><li>All learned IR signals, names, signal settings and IR assignments.</li>
 <li>The selected Tap Dial and stored Zigbee network/pairing information for the <strong>same ESP</strong>.</li>
 </ul>
 <p>No extra password or cloud account is required. The file contains Wi-Fi and pairing keys: keep it private on your computer and do not attach it to a public bug report. Importing it onto a different ESP is not supported.</p>
@@ -199,17 +213,17 @@
 <ol>
 <li>Close the installer dialog after flashing.</li>
 <li>Choose <strong>Start setup</strong>, connect the same ESP and choose <strong>Restore backup</strong>. Wi-Fi does not have to be configured yet.</li>
-<li>Select the JSON file and review the summary. Uploading and checking it does not yet change active settings.</li>
+<li>Select the current format 2 JSON file and review the summary, including its learned IR command count. Uploading and checking it does not yet change active settings.</li>
 <li>Confirm replacement and choose <strong>Prepare restoration</strong>.</li>
 <li>Use the separate <strong>Restart now</strong> button to apply it. Until then, other settings and audio-button commands are blocked. Keep power connected while restoration is being applied.</li>
 <li>Reconnect USB if necessary, or open the restored network address. Wake a sleeping Tap Dial with a brief button press.</li>
 </ol>
 <h3>Future firmware updates</h3>
-<p>DialCaptain has no dedicated OTA updater. Updates use the USB Web Installer. Export before a complete erase. Without “Erase device”, a compatible application/layout update may preserve settings; a clean installation removes them. A backup file is therefore the normal recovery path.</p>
+<p>DialCaptain has no dedicated OTA updater. Use the current complete USB package. The installer performs a clean installation and removes settings. A current format 2 backup can be restored immediately afterwards in the USB assistant. Old installations and the previous format 1 are not migrated automatically.</p>
 <div class="notice">Import validates the device, file format, checksum and Zigbee compatibility and uses a resumable application state. Do not make a factory reset your first response to a restore error. Complete restoration after a real factory flash has not yet received physical acceptance in this development version.</div>
 </section>
 <section id="support">
-<h2>10 · Troubleshooting</h2>
+<h2>11 · Troubleshooting</h2>
 <div class="table-wrap">
 <table>
 <thead>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#07090a"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Philips Hue Tap Dial und ESP32-C6: Roon, BluOS und WiiM. USB-Einrichtung, Konfiguration und druckbares Gehäuse."><title>DialCaptain — Dein Drehring für Roon, BluOS und WiiM</title><link rel="icon" href="../assets/favicon.svg"><link rel="stylesheet" href="../assets/foundation.css"><link rel="stylesheet" href="../assets/project.css?v=power-benefits-1"><script src="../assets/navigation.js" defer></script><script src="../assets/project.js" defer></script></head>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#07090a"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Philips Hue Tap Dial und ESP32-C6: Roon, BluOS, WiiM und Infrarot. USB-Einrichtung, Konfiguration und druckbares Gehäuse."><title>DialCaptain — Dein Drehring für Roon, BluOS, WiiM und Infrarot</title><link rel="icon" href="../assets/favicon.svg"><link rel="stylesheet" href="../assets/foundation.css"><link rel="stylesheet" href="../assets/project.css?v=dc-0302"><script src="../assets/navigation.js" defer></script><script src="../assets/project.js" defer></script></head>
 <body class="project-page"><a class="skip-link" href="#main">Zum Inhalt</a><svg class="icon-sprite" aria-hidden="true"><symbol id="i-usb" viewBox="0 0 24 24"><path d="M12 3v15M9 6l3-3 3 3M12 11l-5 4H4M12 14l5 4h3"/><circle cx="4" cy="15" r="1"/><rect x="19" y="17" width="2" height="2"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5v16M12 5C8 2 4 3 3 4v15c3-1 6-1 9 2 3-3 6-3 9-2V4c-1-1-5-2-9 1Z"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 19v2h16v-2"/></symbol><symbol id="i-github" viewBox="0 0 24 24"><path d="M9 21v-4c-4 1-4-2-6-2M15 21v-4c0-1-.5-2-1-2 4-.5 6-2 6-6 0-1-.5-3-1-3 .5-1 .5-3 0-3-2 0-3 1-4 1-2-.5-4-.5-6 0-1 0-2-1-4-1-.5 0-.5 2 0 3-.5 0-1 2-1 3 0 4 2 5.5 6 6-.5 0-1 1-1 2"/></symbol></svg>
 <header class="site-header">
 <div class="header-inner"><a class="brand" href="#overview" aria-label="DialCaptain"><img src="../assets/favicon.svg" alt="" width="30" height="30"><span>Dial<em>Captain</em></span></a>
@@ -18,12 +18,12 @@
 <section id="overview" class="hero page-width">
 <div class="hero-copy">
 <h1>Deine Musik.<br>Ein Dreh genügt.</h1>
-<p>Ein Philips Hue Tap Dial. Ein kleiner ESP32-C6. Und deine Lieblingsmusik in Roon, auf BluOS oder WiiM – direkt per Drehring und vier frei belegbaren Tasten.</p>
+<p>Ein Philips Hue Tap Dial. Ein kleiner ESP32-C6. Und deine Lieblingsmusik in Roon, auf BluOS/WiiM oder per optionaler Infrarotsteuerung – direkt per Drehring und vier frei belegbaren Tasten.</p>
 <ul class="power-highlights" aria-label="Batterie und Stromversorgung"><li><strong>Mindestens 2 Jahre*</strong><span>Batterielaufzeit laut Philips Hue</span></li><li><strong>Kleines 5-V-USB-Netzteil</strong><span>Stromversorgung für den ESP</span></li></ul>
 <p class="power-footnote">* <a href="https://www.philips-hue.com/de-de/p/hue-tap-dial-switch/8719514440999">Herstellerangabe zum Tap Dial</a>. Die tatsächliche Laufzeit hängt von der Nutzung ab; für DialCaptain liegt noch keine Langzeitmessung vor.</p>
 <div class="hero-actions"><a class="button secondary video-guide-link" href="../video/dialcaptain-installation-de.html"><span aria-hidden="true">▶</span>Installationsvideo ansehen</a><a class="button primary" href="../firmware/?lang=de" ><svg aria-hidden="true"><use href="#i-usb"></use></svg>USB-Installation</a><a class="button secondary" href="guide/" ><svg aria-hidden="true"><use href="#i-book"></use></svg>Anleitung lesen</a><a class="button secondary" href="#hardware" ><svg aria-hidden="true"><use href="#i-arrow"></use></svg>Benötigte Hardware</a><a class="button secondary" href="#enclosure" ><svg aria-hidden="true"><use href="#i-download"></use></svg>Gehäuse & STL</a>
 </div>
-<div class="release-note"><strong>Entwicklungsstand · 0.2.0-dev.8</strong><br>Früher RoonPilot Light. Die Projektseiten und der Installer werden hier vorbereitet; es gibt noch keinen stabilen DialCaptain-Release.</div>
+<div class="release-note"><strong>Entwicklungsstand · 0.3.0-dev.2</strong><br>Früher RoonPilot Light. Die Projektseiten und der Installer werden hier vorbereitet; es gibt noch keinen stabilen DialCaptain-Release.</div>
 <div class="license-summary">Kostenlos für private, nicht kommerzielle Nutzung. <a href="license/">Lizenzbedingungen →</a></div>
 <aside class="project-support" aria-label="DialCaptain unterstützen"><p>Ein freiwilliges Dankeschön für die Arbeit an DialCaptain.</p><div class="support-links support-links-prominent"><a class="button" href="https://buy.stripe.com/6oU3cw0eV0hC5nbdlX2Fa00"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 8h13v9a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4ZM17 9h2a3 3 0 0 1 0 6h-2M7 3v2m4-3v3m4-2v2"/></svg>Send Me a Coffee</a><a class="button" href="https://buymeacoffee.com/mermayer"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 8h13v9a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4ZM17 9h2a3 3 0 0 1 0 6h-2M7 3v2m4-3v3m4-2v2"/></svg>Buy Me a Coffee</a></div></aside>
 </div>
@@ -31,13 +31,13 @@
 <figcaption>Der Tap Dial bleibt batteriebetrieben. Der ESP erhält dauerhaft USB-Strom.</figcaption>
 </figure>
 </section>
-<div class="signal-path page-width"><strong>Tap Dial</strong><span>ZIGBEE →</span><strong>ESP32-C6</strong><span>WLAN →</span><strong>Roon · BluOS · WiiM</strong>
+<div class="signal-path page-width"><strong>Tap Dial</strong><span>ZIGBEE →</span><strong>ESP32-C6</strong><span>WLAN / IR →</span><strong>Roon · BluOS · WiiM · IR</strong>
 </div>
 <section id="control" class="content-section page-width">
 <div class="section-heading">
 <p class="section-number">01</p>
 <div>
-<h2>Drei Wege zur Musik.</h2>
+<h2>Vier Wege zur Musik.</h2>
 <p>Eine Betriebsart ist aktiv. Die Einstellungen der anderen bleiben gespeichert.</p>
 </div>
 </div>
@@ -54,12 +54,13 @@
 <h3>WiiM</h3>
 <p>WiiM direkt über seine lokale API steuern. Presets aus WiiM Home übernehmen. Play/Pause, Vor/Zurück und optional die eigene WiiM-Lautstärke am Ring bedienen.</p><a href="guide/#wiim">So richtest du es ein →</a>
 </article>
+<article><h3>Infrarot</h3><p>Bis zu zehn Befehle deiner Audiofernbedienung lernen. Drehring und kurze/lange Tasten direkt zuordnen. Benötigt zusätzliche IR-Module am ESP; im normalen Betrieb auch ohne WLAN.</p><a href="guide/#infrared">Anschließen und einrichten →</a></article>
 </div>
 <div class="scope-note">
 <p><strong>Ohne Zusatzrechner.</strong> Die Firmware läuft auf dem ESP. Keine Hue Bridge, kein Raspberry Pi, Docker, MQTT oder dauerhaft laufender PC nötig. Roon benötigt weiterhin einen Roon Server.</p>
 <p><strong>Steuert Musik, spielt sie aber nicht ab.</strong> Der ESP überträgt keine Musik, ist kein Roon-Audio-Endpunkt und ersetzt weder deinen Player noch einen DAC. Ein Tap Dial gehört zu genau einem Zigbee-Netz.</p>
 </div>
-<aside class="notice" id="future-integrations" aria-labelledby="future-integrations-title"><h3 id="future-integrations-title">Offen für weitere Audiogeräte.</h3><p>DialCaptain lässt sich grundsätzlich auch für weitere Netzwerk-Player, Verstärker und andere Audiogeräte erweitern, wenn sie eine vom ESP erreichbare <strong>REST-API</strong> mit geeigneten Steuerbefehlen bereitstellen. Damit ist das Konzept auch auf andere Hersteller übertragbar.</p><p>Für jedes weitere System braucht es eine passende Anbindung und Tests am Gerät. Welche Funktionen möglich sind – etwa Lautstärke, Play/Pause, Quellen oder Presets – und welcher Zugriff erforderlich ist, bestimmt die jeweilige API.</p><p><strong>Heute verfügbar sind Roon, BluOS und WiiM.</strong> Weitere Anbindungen sind eine Perspektive für zukünftige Erweiterungen. Dafür fehlen derzeit vor allem geeignete Testgeräte; ein Netzwerkanschluss allein bedeutet noch keine automatische Unterstützung.</p></aside>
+<aside class="notice" id="future-integrations" aria-labelledby="future-integrations-title"><h3 id="future-integrations-title">Offen für weitere Audiogeräte.</h3><p>DialCaptain lässt sich grundsätzlich auch für weitere Netzwerk-Player, Verstärker und andere Audiogeräte erweitern, wenn sie eine vom ESP erreichbare <strong>REST-API</strong> mit geeigneten Steuerbefehlen bereitstellen. Damit ist das Konzept auch auf andere Hersteller übertragbar.</p><p>Für jedes weitere System braucht es eine passende Anbindung und Tests am Gerät. Welche Funktionen möglich sind – etwa Lautstärke, Play/Pause, Quellen oder Presets – und welcher Zugriff erforderlich ist, bestimmt die jeweilige API.</p><p><strong>Heute verfügbar sind Roon, BluOS, WiiM und Infrarot.</strong> Weitere Anbindungen sind eine Perspektive für zukünftige Erweiterungen. Dafür fehlen derzeit vor allem geeignete Testgeräte; ein Netzwerkanschluss allein bedeutet noch keine automatische Unterstützung.</p></aside>
 </section>
 <section id="hardware" class="content-section page-width">
 <div class="section-heading">
@@ -73,7 +74,7 @@
 <figure class="hardware-image"><img src="../assets/esp32-c6-zero.webp" alt="ESP32-C6 Zero mit USB-C, RGB-LED sowie BOOT- und RESET-Taster" width="683" height="900" loading="lazy">
 <figcaption>ESP32-C6 Zero · 8 MB Flash · USB-C</figcaption>
 </figure>
-<div><dl class="detail-list"><dt>Tap Dial</dt><dd><strong>Philips Hue Tap Dial RDM002</strong><br>Vier Tasten und Drehring; eine CR2032-Batterie. Philips Hue nennt mindestens zwei Jahre Batterielaufzeit.*</dd><dt>ESP</dt><dd><strong>ESP32-C6 Zero, 8 MB</strong><br>Geprüfter Entwicklungsstand auf diesem Board. Andere ESP-Varianten sind keine austauschbaren Ziele.</dd><dt>USB</dt><dd>USB-Datenkabel zur Einrichtung, danach genügt ein kleines, stabiles 5-V-USB-Netzteil für den ESP. Ein leistungsstarkes Schnellladegerät ist nicht erforderlich.</dd><dt>WLAN</dt><dd>2,4 GHz im Heimnetz; ESP, Player und gegebenenfalls Roon Server müssen sich erreichen können.</dd></dl>
+<div><dl class="detail-list"><dt>Tap Dial</dt><dd><strong>Philips Hue Tap Dial RDM002</strong><br>Vier Tasten und Drehring; eine CR2032-Batterie. Philips Hue nennt mindestens zwei Jahre Batterielaufzeit.*</dd><dt>ESP</dt><dd><strong>ESP32-C6 Zero, 8 MB</strong><br>Geprüfter Entwicklungsstand auf diesem Board. Andere ESP-Varianten sind keine austauschbaren Ziele.</dd><dt>USB</dt><dd>USB-Datenkabel zur Einrichtung, danach genügt ein kleines, stabiles 5-V-USB-Netzteil für den ESP. Ein leistungsstarkes Schnellladegerät ist nicht erforderlich.</dd><dt>WLAN</dt><dd>2,4 GHz im Heimnetz; ESP, Player und gegebenenfalls Roon Server müssen sich erreichen können.</dd><dt>IR, optional</dt><dd>Adafruit 5639 IR-Sender und KY-022-Empfänger direkt am ESP. <a class="inline-link" href="guide/#infrared">Anschlüsse und Lernfunktion</a>.</dd></dl>
 <div class="notice">Der ESP32-C6 enthält WLAN und Zigbee. Es sind keine zusätzlichen Funkmodule und keine Companion-Firmware nötig.</div>
 <p class="media-caption"><a class="inline-link" href="https://www.waveshare.com/wiki/ESP32-C6-Zero">Boardinformationen bei Waveshare</a>
 </p>
@@ -103,10 +104,10 @@
 </article>
 <article>
 <h3>Koppeln & belegen</h3>
-<p>Webkonfiguration öffnen, Tap Dial koppeln und Roon, BluOS oder WiiM mit den gewünschten Aktionen einrichten.</p>
+<p>Webkonfiguration öffnen, Tap Dial koppeln und Roon, BluOS, WiiM oder Infrarot mit den gewünschten Aktionen einrichten.</p>
 </article>
 </div>
-<div class="notice"><strong>Schon eingerichtet?</strong> Vor einer vollständigen Löschung Einstellungen exportieren. Die Datei enthält auch WLAN und Tap-Dial-Kopplung. Beim Wiederherstellen gibt es eine Vorschau und einen eigenen Neustart-Knopf.</div>
+<div class="notice"><strong>USB-Neuinstallation:</strong> Das aktuelle lokale Paket installiert Firmware und Speicheraufteilung gemeinsam und entfernt die bisherigen Einstellungen. Danach neu einrichten oder eine aktuelle Sicherung im Format 2 wiederherstellen.</div>
 <div class="actions"><a class="button primary" href="../firmware/?lang=de" ><svg aria-hidden="true"><use href="#i-usb"></use></svg>USB-Installation ansehen</a><a class="button secondary" href="guide/#usb" ><svg aria-hidden="true"><use href="#i-book"></use></svg>Jeden Schritt nachlesen</a>
 </div>
 </section>
@@ -118,7 +119,7 @@
 <p>Vier Tasten, kurze und lange Aktionen und ein eigener Drehring. Die Profile bleiben voneinander getrennt.</p>
 </div>
 </div>
-<div class="screenshot-tabs" role="tablist" aria-label="Betriebsarten"><button role="tab" id="tab-roon" aria-controls="panel-roon" aria-selected="true" tabindex="0">Roon</button><button role="tab" id="tab-bluos" aria-controls="panel-bluos" aria-selected="false" tabindex="-1">BluOS</button><button role="tab" id="tab-wiim" aria-controls="panel-wiim" aria-selected="false" tabindex="-1">WiiM</button>
+<div class="screenshot-tabs" role="tablist" aria-label="Betriebsarten"><button role="tab" id="tab-roon" aria-controls="panel-roon" aria-selected="true" tabindex="0">Roon</button><button role="tab" id="tab-bluos" aria-controls="panel-bluos" aria-selected="false" tabindex="-1">BluOS</button><button role="tab" id="tab-wiim" aria-controls="panel-wiim" aria-selected="false" tabindex="-1">WiiM</button><button role="tab" id="tab-ir" aria-controls="panel-ir" aria-selected="false" tabindex="-1">IR</button>
 </div>
 <div id="panel-roon" class="screenshot-panel" role="tabpanel" aria-labelledby="tab-roon" >
 <div class="screenshot-copy">
@@ -147,6 +148,7 @@
 <figcaption class=media-caption>Vom Gerät aufgenommene Weboberfläche; Betriebsart im Formular vor dem Speichern ausgewählt.</figcaption>
 </figure>
 </div>
+<div id="panel-ir" class="screenshot-panel" role="tabpanel" aria-labelledby="tab-ir" hidden><div class="screenshot-copy"><h3>Deine Fernbedienung. Gelernt.</h3><p>Zweimal aufnehmen, prüfen und speichern. Zehn Lernplätze für Lautstärke, Wiedergabe, Eingang oder Power. Die IR-Belegung bleibt von den Netzwerkprofilen getrennt.</p><a class="inline-link" href="guide/#infrared">Zur vollständigen IR-Anleitung →</a></div><figure><button class="media-button" type="button" data-enlarge><img src="../assets/ir-de.png" alt="IR-Lernplätze in DialCaptain 0.3.0-dev.2" loading="lazy" width="1040" height="1000"><span>Zum Vergrößern anklicken</span></button><figcaption class="media-caption">Vorschau der aktuellen Weboberfläche mit Beispieldaten. Der reale IR-Modultest steht noch aus.</figcaption></figure></div>
 <div class="notice"><strong>Die Webseite bleibt nicht ständig offen.</strong> Taste 4 am Tap Dial acht Sekunden halten und loslassen, alternativ BOOT am ESP drei Sekunden halten. Bernsteinfarbenes Blinken zeigt die aktive Webseite. Nach zehn Minuten ohne Bedienung schließt sie; die Audiosteuerung läuft weiter.</div>
 </section>
 <section id="enclosure" class="content-section page-width">
@@ -185,11 +187,11 @@
 </details>
 <details>
 <summary>Was bleibt beim Profilwechsel erhalten?</summary>
-<p>Alle drei Profile bleiben gespeichert. Erst das Speichern aktiviert die neue Betriebsart. Roon-Zone, Autorisierung, Favoriten und die eigenen BluOS-/WiiM-Zuordnungen werden nicht durch einen Wechsel gelöscht.</p>
+<p>Alle vier Profile bleiben gespeichert. Erst das Speichern aktiviert die neue Betriebsart. Roon-Zone, Autorisierung, Favoriten und die eigenen BluOS-/WiiM-Zuordnungen werden nicht durch einen Wechsel gelöscht.</p>
 </details>
 <details>
 <summary>Wo sind die Lautstärkeschritte?</summary>
-<p>Roon: 1 bis 4 native Roon-Schritte pro Rastung; die Einheit bestimmt der gewählte Ausgang. BluOS: 0,5 / 1 / 2 dB. WiiM: optional 1 / 2 / 5 Prozentpunkte. Empfindlichkeit und Schrittgröße sind getrennte Einstellungen.</p>
+<p>Roon: 1 bis 4 native Roon-Schritte pro Rastung; die Einheit bestimmt der gewählte Ausgang. BluOS: 0,5 / 1 / 2 dB. WiiM: optional 1 / 2 / 5 Prozentpunkte. IR: 1 bis 3 gelernte Tastenschritte pro Rastung. Empfindlichkeit und Schrittgröße sind getrennte Einstellungen.</p>
 </details>
 <details>
 <summary>Kann ich die Kopplung sichern?</summary>
@@ -197,7 +199,7 @@
 </details>
 <details>
 <summary>Wie weit ist die Entwicklung?</summary>
-<p>Roon, BluOS und WiiM sind implementiert; Grundbedienung und mehrere Geräteabläufe wurden getestet. Vollständige Erstkopplung eines neuen Tap Dial und ein Restore nach echtem Factory-Flash benötigen noch gesonderte Hardwareabnahme. Eversolo und ein OTA-Updater sind nicht implementiert.</p>
+<p>Roon, BluOS und WiiM sind am Gerät erprobt. Infrarot ist implementiert und in Software geprüft; Modultest, Reichweite und Funkbelastung sind noch offen. Vollständige Erstkopplung und Restore nach echtem Factory-Flash benötigen ebenfalls Hardwareabnahme. Eversolo und OTA sind nicht implementiert.</p>
 </details>
 </div>
 <div class="actions"><a class="button primary" href="guide/" ><svg aria-hidden="true"><use href="#i-book"></use></svg>Vollständige Anleitung</a><a class="button secondary" href="guide/#support" ><svg aria-hidden="true"><use href="#i-arrow"></use></svg>Hilfe bei Problemen</a><a class="button secondary" href="https://github.com/mermayer/DialCaptain" ><svg aria-hidden="true"><use href="#i-github"></use></svg>GitHub home</a>

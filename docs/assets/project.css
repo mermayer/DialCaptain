@@ -45,7 +45,7 @@ h1,h2,h3,p { margin-top:0; }
 .section-number { color:var(--accent); font:12px/1.8 Consolas,monospace; margin-top:12px; }
 .section-heading h2 { font-size:clamp(32px,3.4vw,48px); line-height:1.12; letter-spacing:-.045em; font-weight:650; margin-bottom:14px; }
 .section-heading p:last-child { color:var(--muted-strong); max-width:720px; margin-bottom:0; font-size:18px; }
-.mode-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:32px; }
+.mode-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; }
 .mode-grid article { padding-top:24px; border-top:2px solid var(--line); }
 .mode-grid h3 { font-size:27px; letter-spacing:-.035em; margin-bottom:18px; }
 .mode-grid p,.mode-grid li { color:var(--muted-strong); }
@@ -249,3 +249,5 @@ code { overflow-wrap:anywhere; }
 .power-highlights span { display:block; margin-top:4px; color:var(--muted-strong); font-size:13px; line-height:1.5; }
 .hero-copy > .power-footnote { max-width:580px; margin:12px 0 0; color:var(--muted); font-size:12px; line-height:1.6; }
 .power-footnote a { color:var(--accent); }
+
+.screenshot-tabs{flex-wrap:wrap}
